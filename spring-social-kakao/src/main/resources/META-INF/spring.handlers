@@ -1,0 +1,1 @@
+http\://www.springframework.org/schema/social/kakao=org.springframework.social.kakao.config.xml.KakaoNamespaceHandler
