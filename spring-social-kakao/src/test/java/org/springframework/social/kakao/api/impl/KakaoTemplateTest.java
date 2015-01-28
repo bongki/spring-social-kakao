@@ -1,7 +1,9 @@
 package org.springframework.social.kakao.api.impl;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +14,11 @@ import org.springframework.social.kakao.api.KakaoTalkProfile;
 import org.springframework.social.kakao.api.StoryLinkInfo;
 import org.springframework.social.kakao.api.StoryLinkPosting;
 import org.springframework.social.kakao.api.StoryNotePosting;
+import org.springframework.social.kakao.api.StoryPhotoPosting;
+import org.springframework.social.kakao.api.StoryPhotoUpload;
 import org.springframework.social.kakao.api.StoryPostingResult;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class KakaoTemplateTest {
 	static final String ACCESS_TOKEN = ""; //insert access token
@@ -20,9 +26,19 @@ public class KakaoTemplateTest {
 	
 	Kakao kakao;
 	
+	StoryPhotoUpload storyPhotoUpload = new StoryPhotoUpload();
+	
 	@Before
 	public void before() {
 		kakao = new KakaoTemplate(ACCESS_TOKEN);
+	
+		List<String> photoFileList = new ArrayList<String>();
+		photoFileList.add("D:\\sample_photo\\1.jpg");
+		photoFileList.add("D:\\sample_photo\\2.jpg");
+		photoFileList.add("D:\\sample_photo\\3.jpg");
+		photoFileList.add("D:\\sample_photo\\4.jpg");
+		photoFileList.add("D:\\sample_photo\\5.jpg");
+		storyPhotoUpload.setFilePathList(photoFileList);
 	}
 	
 	@Test
@@ -151,5 +167,63 @@ public class KakaoTemplateTest {
 		StoryPostingResult linkWithURLResult = kakao.storyOperation().postLink(storyLinkPostingWithURL);
 		System.out.println(String.format("** link(with url) article id : %s", linkWithURLResult.getId()));
 		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void uploadPhotoTest() {
+		System.out.println("********************************************************");
+		System.out.println("** Story photo upload operation");
+		System.out.println("********************************************************");
+		List<String> imageUrlList = kakao.storyOperation().uploadPhoto(storyPhotoUpload);
+		for (String photoUrl : imageUrlList) {
+			System.out.println(String.format("** image url : %s", photoUrl));
+		}
+		System.out.println("********************************************************");
+		
+		System.out.println("********************************************************");
+		System.out.println("** Story photo posting operation (use imageUrlList object)");
+		System.out.println("********************************************************");
+		StoryPhotoPosting storyPhotoPosting = new StoryPhotoPosting();
+		storyPhotoPosting.setImageUrlList(imageUrlList);
+		StringBuilder sbPhotoContent = new StringBuilder("Kakao rest api library 개발 테스트(spring social kakao).\r\n")
+			.append("kakao multi rest api 호출 결과 객체 셋팅 테스트\r\n")
+			.append("\r\n테스트 시간 : ").append(DATE_FORMAT.format(new Date()));
+		storyPhotoPosting.setContent(sbPhotoContent.toString());
+		StoryPostingResult photoResult = kakao.storyOperation().postPhoto(storyPhotoPosting);
+		System.out.println(String.format("** photo article id : %s", photoResult.getId()));
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void uploadPhotoTestWithFileList() {
+		System.out.println("********************************************************");
+		System.out.println("** Story photo posting operation (use storyPhotoUpload object)");
+		System.out.println("********************************************************");
+		StoryPhotoPosting storyPhotoPosting = new StoryPhotoPosting();
+		storyPhotoPosting.setStoryPhotoUpload(storyPhotoUpload);
+		StringBuilder sbPhotoContent = new StringBuilder("Kakao rest api library 개발 테스트(spring social kakao).\r\n")
+			.append("kakao multi rest api 내부 처리 테스트\r\n")
+			.append("\r\n테스트 시간 : ").append(DATE_FORMAT.format(new Date()));
+		storyPhotoPosting.setContent(sbPhotoContent.toString());
+		StoryPostingResult photoResult = kakao.storyOperation().postPhoto(storyPhotoPosting);
+		System.out.println(String.format("** photo article id : %s", photoResult.getId()));
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void listToJson() {
+		List<String> list = new ArrayList<String>();
+		
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add("4");
+		
+		ObjectMapper om = new ObjectMapper();
+		try {
+			System.out.println(om.writerWithDefaultPrettyPrinter().writeValueAsString(list));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

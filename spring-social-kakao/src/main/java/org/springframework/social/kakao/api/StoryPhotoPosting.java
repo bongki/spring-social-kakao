@@ -3,13 +3,16 @@ package org.springframework.social.kakao.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class StoryPhotoPosting extends StoryNotePosting {
 	private StoryPhotoUpload storyPhotoUpload;
 	private List<String> imageUrlList;
 
 	/**
 	 * <pre>
-	 * 등록대상 이미지 정보를 가져온다
+	 * 등록대상 이미지 목록 (local device상의 이미지 목록)을 가져온다
 	 * </pre>
 	 * @return
 	 */
@@ -26,6 +29,8 @@ public class StoryPhotoPosting extends StoryNotePosting {
 	 * 
 	 * STEP 1. 파일 업로드 API 호출
 	 * STEP 2. 이미지 포스팅 API 호출
+	 * 
+	 * 해당 항목을 셋팅 할 경우 imageUrlList에 셋팅된 항목들은 전부 무시된다.
 	 * </pre>
 	 * @param storyPhotoUpload
 	 */
@@ -77,6 +82,28 @@ public class StoryPhotoPosting extends StoryNotePosting {
 	 */
 	public void clearImageUrlList() {
 		this.imageUrlList = null;
+	}
+	
+	/**
+	 * <pre>
+	 * 이미지 URL정보를 Json string 형태로 변환한다.
+	 * </pre>
+	 * @param prettyPrint
+	 * @return
+	 */
+	public String imageUrlListToJson(boolean prettyPrint) {
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		try {
+			if (prettyPrint) {
+				return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(imageUrlList);
+			} else {
+				return objectMapper.writeValueAsString(imageUrlList);
+			}
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 	
 	

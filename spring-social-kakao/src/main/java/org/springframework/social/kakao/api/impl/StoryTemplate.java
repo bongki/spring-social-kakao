@@ -1,5 +1,9 @@
 package org.springframework.social.kakao.api.impl;
 
+import java.util.List;
+
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.social.kakao.api.AbstractStoryPosting;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
 import org.springframework.social.kakao.api.StoryLinkInfo;
@@ -8,7 +12,6 @@ import org.springframework.social.kakao.api.StoryNotePosting;
 import org.springframework.social.kakao.api.StoryOperation;
 import org.springframework.social.kakao.api.StoryPhotoPosting;
 import org.springframework.social.kakao.api.StoryPhotoUpload;
-import org.springframework.social.kakao.api.StoryPhotoUploadResult;
 import org.springframework.social.kakao.api.StoryPostingResult;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -43,14 +46,31 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 		return restTemplate.postForObject(buildApiUri("/v1/api/story/post/note"), param, StoryPostingResult.class);
 	}
 	
-	public StoryPhotoUploadResult uploadPhoto(StoryPhotoUpload storyPhotoUpload) {
-		requireAuthorization();
-		return null;
+	@SuppressWarnings("unchecked")
+	public List<String> uploadPhoto(StoryPhotoUpload storyPhotoUpload) {
+		List<String> filePathList = storyPhotoUpload.getFilePathList();
+		
+		MultiValueMap<String, FileSystemResource> param = new LinkedMultiValueMap<String, FileSystemResource>();
+		for (String filePath : filePathList) {
+			param.add("file", new FileSystemResource(filePath));
+		}
+		
+		return restTemplate.postForObject(buildApiUri("/v1/api/story/upload/multi"), param, List.class);
 	}
 	
 	public StoryPostingResult postPhoto(StoryPhotoPosting storyPhotoPosting) {
 		requireAuthorization();
-		return null;
+		if (storyPhotoPosting.getStoryPhotoUpload() != null) {
+			//이미지 업로드 호출하여 결과 대체
+			List<String> imageUrlList = uploadPhoto(storyPhotoPosting.getStoryPhotoUpload());
+			storyPhotoPosting.setImageUrlList(imageUrlList);
+		}
+		
+		MultiValueMap<String, Object> param = commonParamSetting(storyPhotoPosting);
+		param.set("image_url_list", storyPhotoPosting.imageUrlListToJson(false));
+		param.set("content", storyPhotoPosting.getContent());
+		
+		return restTemplate.postForObject(buildApiUri("/v1/api/story/post/photo"), param, StoryPostingResult.class);
 	}
 	
 	public StoryLinkInfo linkInfo(String url) {

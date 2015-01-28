@@ -1,5 +1,7 @@
 package org.springframework.social.kakao.api;
 
+import java.util.List;
+
 
 public interface StoryOperation {
 	/**
@@ -29,24 +31,20 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * 해당 access token을 발급받은 사용자의 카카오 이미지 업로드 (for postNote)
-	 * (개발중 - 2015.01.28)
+	 * 해당 access token을 발급받은 사용자의 카카오 이미지 업로드 (for postPhoto)
 	 * </pre>
 	 * @param storyPhotoUpload
 	 * @return
 	 */
-	@Deprecated
-	StoryPhotoUploadResult uploadPhoto(StoryPhotoUpload storyPhotoUpload);
+	List<String> uploadPhoto(StoryPhotoUpload storyPhotoUpload);
 	
 	/**
 	 * <pre>
 	 * 해당 access token을 발급받은 사용자의 카카오 스토리 포토 포함 글 작성
-	 * (개발중 - 2015.01.28)
 	 * </pre>
 	 * @param storyPhotoPosting
 	 * @return
 	 */
-	@Deprecated
 	StoryPostingResult postPhoto(StoryPhotoPosting storyPhotoPosting);
 	
 	/**
