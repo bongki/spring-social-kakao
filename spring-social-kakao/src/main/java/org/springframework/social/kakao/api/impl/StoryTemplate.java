@@ -6,6 +6,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.social.kakao.api.AbstractStoryPosting;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
+import org.springframework.social.kakao.api.MyStory;
 import org.springframework.social.kakao.api.StoryLinkInfo;
 import org.springframework.social.kakao.api.StoryLinkPosting;
 import org.springframework.social.kakao.api.StoryNotePosting;
@@ -39,7 +40,7 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 	public StoryPostingResult postNote(StoryNotePosting storyNotePosting) {
 		requireAuthorization();
 		//파라메터 생성하기
-		MultiValueMap<String, Object> param = commonParamSetting(storyNotePosting);
+		MultiValueMap<String, Object> param = postingCommonParamSetting(storyNotePosting);
 		param.set("content", storyNotePosting.getContent());
 		
 		//API 요청
@@ -66,7 +67,7 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 			storyPhotoPosting.setImageUrlList(imageUrlList);
 		}
 		
-		MultiValueMap<String, Object> param = commonParamSetting(storyPhotoPosting);
+		MultiValueMap<String, Object> param = postingCommonParamSetting(storyPhotoPosting);
 		param.set("image_url_list", storyPhotoPosting.imageUrlListToJson(false));
 		param.set("content", storyPhotoPosting.getContent());
 		
@@ -89,14 +90,14 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 		}
 		
 		//파라메터 셋팅
-		MultiValueMap<String, Object> param = commonParamSetting(storyLinkPosting);
+		MultiValueMap<String, Object> param = postingCommonParamSetting(storyLinkPosting);
 		param.set("link_info", storyLinkPosting.getStoryLinkInfo().toJsonString(false));
 		param.set("content", storyLinkPosting.getContent());
 		
 		return restTemplate.postForObject(buildApiUri("/v1/api/story/post/link"), param, StoryPostingResult.class);
 	}
 	
-	private MultiValueMap<String, Object> commonParamSetting(AbstractStoryPosting abstractStoryPosting) {
+	private MultiValueMap<String, Object> postingCommonParamSetting(AbstractStoryPosting abstractStoryPosting) {
 		MultiValueMap<String, Object> param = new LinkedMultiValueMap<String, Object>();
 		
 		param.set("permission", abstractStoryPosting.getPermission());
@@ -115,5 +116,22 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 		}
 		
 		return param;
+	}
+	
+	public MyStory myStory(String id) {
+		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
+		param.set("id", id);
+		
+		return restTemplate.getForObject(buildApiUri("/v1/api/story/mystory", param), MyStory.class);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<MyStory> myStories(String lastId) {
+		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
+		if (lastId != null) {
+			param.set("last_id", lastId);
+		}
+		
+		return restTemplate.getForObject(buildApiUri("/v1/api/story/mystories", param), List.class);
 	}
 }

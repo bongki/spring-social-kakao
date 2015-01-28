@@ -11,6 +11,7 @@ import org.springframework.social.kakao.api.Kakao;
 import org.springframework.social.kakao.api.KakaoProfile;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
 import org.springframework.social.kakao.api.KakaoTalkProfile;
+import org.springframework.social.kakao.api.MyStory;
 import org.springframework.social.kakao.api.StoryLinkInfo;
 import org.springframework.social.kakao.api.StoryLinkPosting;
 import org.springframework.social.kakao.api.StoryNotePosting;
@@ -21,7 +22,7 @@ import org.springframework.social.kakao.api.StoryPostingResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class KakaoTemplateTest {
-	static final String ACCESS_TOKEN = ""; //insert access token
+	static final String ACCESS_TOKEN = "ZPgXH15ccszTadCG6aXI--_TBqHsyDBVKB21gawQQjQAAAFLMuj6lw"; //insert access token
 	static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 	
 	Kakao kakao;
@@ -211,19 +212,32 @@ public class KakaoTemplateTest {
 	}
 	
 	@Test
-	public void listToJson() {
-		List<String> list = new ArrayList<String>();
-		
-		list.add("1");
-		list.add("2");
-		list.add("3");
-		list.add("4");
-		
-		ObjectMapper om = new ObjectMapper();
+	public void myStory() {
+		System.out.println("********************************************************");
+		System.out.println("** Story my story operation");
+		System.out.println("********************************************************");
+		MyStory myStory = kakao.storyOperation().myStory("_91mz53.JQhjkAm71x0");
+		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			System.out.println(om.writerWithDefaultPrettyPrinter().writeValueAsString(list));
+			System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(myStory));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void myStories() {
+		System.out.println("********************************************************");
+		System.out.println("** Story my stories operation");
+		System.out.println("********************************************************");
+		List<MyStory> myStories = kakao.storyOperation().myStories("_91mz53.6AoavE1Izn7");
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(myStories));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("********************************************************");
 	}
 }
