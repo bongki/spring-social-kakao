@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.social</groupId>
 	<artifactId>spring-social-kakao</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<name>spring-social-kakao</name>
 	<description>kakao api library with spring social</description>
 

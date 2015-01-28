@@ -24,9 +24,12 @@ public class UserTemplate extends AbstractKakaoOperations implements UserOperati
 
 	public KakaoProfile getUserProfile() {
 		requireAuthorization();
-		
 		return restTemplate.getForObject(buildApiUri("/v1/user/me"), KakaoProfile.class);
 	}
 	
-	
+	public KakaoProfile unlink() {
+		requireAuthorization();
+		
+		return restTemplate.postForObject(buildApiUri("/v1/user/unlink"), null, KakaoProfile.class);
+	}
 }

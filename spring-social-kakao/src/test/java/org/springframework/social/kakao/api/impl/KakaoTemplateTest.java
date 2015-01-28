@@ -1,18 +1,32 @@
 package org.springframework.social.kakao.api.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.social.kakao.api.Kakao;
 import org.springframework.social.kakao.api.KakaoProfile;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
 import org.springframework.social.kakao.api.KakaoTalkProfile;
+import org.springframework.social.kakao.api.StoryLinkInfo;
+import org.springframework.social.kakao.api.StoryLinkPosting;
+import org.springframework.social.kakao.api.StoryNotePosting;
+import org.springframework.social.kakao.api.StoryPostingResult;
 
 public class KakaoTemplateTest {
+	static final String ACCESS_TOKEN = ""; //insert access token
+	static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+	
+	Kakao kakao;
+	
+	@Before
+	public void before() {
+		kakao = new KakaoTemplate(ACCESS_TOKEN);
+	}
+	
 	@Test
 	public void getProfile() {
-		String accessToken = ""; //insert access token
-		
-		Kakao kakao = new KakaoTemplate(accessToken);
-		
 		//kakao
 		System.out.println("********************************************************");
 		System.out.println("** Kakao operation");
@@ -56,6 +70,86 @@ public class KakaoTemplateTest {
 		System.out.println(String.format("** talkOperation -> getUserProfile -> profileImageURL : %s", talkProfile.getProfileImageURL()));
 		System.out.println(String.format("** talkOperation -> getUserProfile -> thumbnailURL : %s", talkProfile.getThumbnailURL()));
 		System.out.println(String.format("** talkOperation -> getUserProfile -> countryISO : %s", talkProfile.getCountryISO()));
+		System.out.println("********************************************************");
+		
+	}
+	
+	@Test
+	public void notePostingTest() {
+		//kakao story posting
+		System.out.println("********************************************************");
+		System.out.println("** Story note posting operation");
+		System.out.println("********************************************************");
+		StoryNotePosting storyNotePosting = new StoryNotePosting();
+		StringBuilder sbNoteContent = new StringBuilder("Kakao rest api library 개발 테스트(spring social kakao).\r\n")
+			.append("\r\n테스트 시간 : ").append(DATE_FORMAT.format(new Date()));
+		storyNotePosting.setContent(sbNoteContent.toString());
+		
+		StoryPostingResult notePostingResult = kakao.storyOperation().postNote(storyNotePosting);
+		System.out.println(String.format("** posting article id : %s", notePostingResult.getId()));
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void linkPostingTest() {
+		//kakao story linkInfo
+		System.out.println("********************************************************");
+		System.out.println("** Story link info");
+		System.out.println("********************************************************");
+		StoryLinkInfo storyLinkInfo = kakao.storyOperation().linkInfo("https://github.com/bongki/spring-social-kakao");
+		System.out.println(String.format("** storyOperation -> linkInfo -> url : %s", storyLinkInfo.getUrl()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> requested_url : %s", storyLinkInfo.getRequested_url()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> host : %s", storyLinkInfo.getHost()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> title : %s", storyLinkInfo.getTitle()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> image : %s", storyLinkInfo.getImage()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> description : %s", storyLinkInfo.getDescription()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> section : %s", storyLinkInfo.getSection()));
+		System.out.println(String.format("** storyOperation -> linkInfo -> site_name : %s", storyLinkInfo.getSite_name()));
+		System.out.println("********************************************************");
+		
+		System.out.println("********************************************************");
+		System.out.println("** Story link info object to json string");
+		System.out.println("********************************************************");
+		System.out.println("** Story link info object to json string (pretty print)");
+		System.out.println(storyLinkInfo.toJsonString(true));
+		System.out.println("** Story link info object to json string");
+		System.out.println(storyLinkInfo.toJsonString(false));
+		System.out.println("********************************************************");
+		
+		System.out.println("********************************************************");
+		System.out.println("** Story link posting operation (use storyLinkInfo object)");
+		System.out.println("********************************************************");
+		StoryLinkPosting storyLinkPosting = new StoryLinkPosting();
+		
+		storyLinkPosting.setStoryLinkInfo(storyLinkInfo);
+		
+		StringBuilder sbLinkContent = new StringBuilder("Kakao rest api library 개발 테스트(spring social kakao).\r\n")
+			.append("kakao linkinfo rest api 호출 결과 객체 셋팅 테스트\r\n")
+			.append("\r\n테스트 시간 : ").append(DATE_FORMAT.format(new Date()));
+		storyLinkPosting.setContent(sbLinkContent.toString());
+		
+		StoryPostingResult linkResult = kakao.storyOperation().postLink(storyLinkPosting);
+		System.out.println(String.format("** link article id : %s", linkResult.getId()));
+		System.out.println("********************************************************");
+		
+	}
+	
+	@Test
+	public void linkWithURLPostingTest() {
+		System.out.println("********************************************************");
+		System.out.println("** Story link posting operation (use url)");
+		System.out.println("********************************************************");
+		StoryLinkPosting storyLinkPostingWithURL = new StoryLinkPosting();
+		
+		storyLinkPostingWithURL.setUrl("https://github.com/bongki/spring-social-kakao");
+		
+		StringBuilder sbLinkWithURLContent = new StringBuilder("Kakao rest api library 개발 테스트(spring social kakao).\r\n")
+			.append("url 설정(kakao linkinfo rest api 호출 내부 처리) 테스트\r\n")
+			.append("\r\n테스트 시간 : ").append(DATE_FORMAT.format(new Date()));
+		storyLinkPostingWithURL.setContent(sbLinkWithURLContent.toString());
+		
+		StoryPostingResult linkWithURLResult = kakao.storyOperation().postLink(storyLinkPostingWithURL);
+		System.out.println(String.format("** link(with url) article id : %s", linkWithURLResult.getId()));
 		System.out.println("********************************************************");
 	}
 }
