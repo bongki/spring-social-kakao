@@ -231,13 +231,22 @@ public class KakaoTemplateTest {
 		System.out.println("********************************************************");
 		System.out.println("** Story my stories operation");
 		System.out.println("********************************************************");
-		List<MyStory> myStories = kakao.storyOperation().myStories("_91mz53.6AoavE1Izn7");
+		List<MyStory> myStories = kakao.storyOperation().myStories(null);
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(myStories));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void deleteMyStory() {
+		System.out.println("********************************************************");
+		System.out.println("** Story delete my story operation");
+		System.out.println("********************************************************");
+		kakao.storyOperation().deleteMyStory("_91mz53.f91bcVG6zX9");
 		System.out.println("********************************************************");
 	}
 }

@@ -134,4 +134,11 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 		
 		return restTemplate.getForObject(buildApiUri("/v1/api/story/mystories", param), List.class);
 	}
+	
+	public void deleteMyStory(String id) {
+		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
+		param.set("id", id);
+		
+		restTemplate.delete(buildApiUri("/v1/api/story/delete/mystory", param));
+	}
 }

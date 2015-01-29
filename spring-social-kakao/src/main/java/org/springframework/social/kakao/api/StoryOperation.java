@@ -85,4 +85,12 @@ public interface StoryOperation {
 	 * @return
 	 */
 	List<MyStory> myStories(String lastId);
+	
+	/**
+	 * <pre>
+	 * 내 스토리 글 삭제
+	 * </pre>
+	 * @param id
+	 */
+	void deleteMyStory(String id);
 }
