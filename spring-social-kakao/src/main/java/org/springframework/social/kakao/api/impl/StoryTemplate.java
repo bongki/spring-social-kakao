@@ -51,6 +51,10 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 	public List<String> uploadPhoto(StoryPhotoUpload storyPhotoUpload) {
 		List<String> filePathList = storyPhotoUpload.getFilePathList();
 		
+		//업로드 대상 이미지 파일에 대하여 gif animation 파일이 있는지 조사하여 gif animation 파일이 존재 한다면 
+		//해당 gif animation 이미지 이외의 다른 이미지 등록 보류 처리 방안 결정 필요.
+		// 1. 라이브러리차원에서 해당 처리를 지원 할것인가. (업로드 직전 필터링)
+		// 2. 해당 라이브러리를 활용하는 프로그램 소스상에서 해당 처리를 구현하도록 할것인가.
 		MultiValueMap<String, FileSystemResource> param = new LinkedMultiValueMap<String, FileSystemResource>();
 		for (String filePath : filePathList) {
 			param.add("file", new FileSystemResource(filePath));
