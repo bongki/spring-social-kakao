@@ -1,5 +1,6 @@
 package org.springframework.social.kakao.api.impl;
 
+import org.springframework.social.kakao.api.AccessTokenInfo;
 import org.springframework.social.kakao.api.KakaoProfile;
 import org.springframework.social.kakao.api.UserOperation;
 import org.springframework.web.client.RestTemplate;
@@ -31,5 +32,11 @@ public class UserTemplate extends AbstractKakaoOperations implements UserOperati
 		requireAuthorization();
 		
 		return restTemplate.postForObject(buildApiUri("/v1/user/unlink"), null, KakaoProfile.class);
+	}
+	
+	public AccessTokenInfo accessTokenInfo() {
+		requireAuthorization();
+		
+		return restTemplate.getForObject(buildApiUri("/v1/user/access_token_info"), AccessTokenInfo.class);
 	}
 }

@@ -3,6 +3,9 @@ package org.springframework.social.kakao.api;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class KakaoObject {
 	private Map<String, Object> extraData;
 	
@@ -16,5 +19,20 @@ public class KakaoObject {
 	
 	public void add(String key, Object value) {
 		this.extraData.put(key, value);
+	}
+	
+	public String toJsonString(boolean prettyPrint) {
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		try {
+			if (prettyPrint) {
+				return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
+			} else {
+				return objectMapper.writeValueAsString(this);
+			}
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+			return "";
+		}
 	}
 }

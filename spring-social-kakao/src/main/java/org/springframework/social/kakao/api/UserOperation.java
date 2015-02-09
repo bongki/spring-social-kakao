@@ -33,4 +33,13 @@ public interface UserOperation {
 	 * @return
 	 */
 	KakaoProfile unlink();
+	
+	/**
+	 * <pre>
+	 * 해당 access token의 상태를 확인한다.
+	 *  - 비정상적 토큰의 경우 401 error 발생 (org.springframework.web.client.HttpClientErrorException)
+	 * </pre>
+	 * @return
+	 */
+	AccessTokenInfo accessTokenInfo();
 }

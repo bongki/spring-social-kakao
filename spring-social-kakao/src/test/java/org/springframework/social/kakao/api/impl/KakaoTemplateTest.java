@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.social.kakao.api.AccessTokenInfo;
 import org.springframework.social.kakao.api.Kakao;
 import org.springframework.social.kakao.api.KakaoProfile;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
@@ -22,7 +23,7 @@ import org.springframework.social.kakao.api.StoryPostingResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class KakaoTemplateTest {
-	static final String ACCESS_TOKEN = "ZPgXH15ccszTadCG6aXI--_TBqHsyDBVKB21gawQQjQAAAFLMuj6lw"; //insert access token
+	static final String ACCESS_TOKEN = ""; //insert access token
 	static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 	
 	Kakao kakao;
@@ -59,6 +60,7 @@ public class KakaoTemplateTest {
 		System.out.println(String.format("** userOperation -> getUserProfile -> properties -> nickanme : %s", profile.getProperties().getNickname()));
 		System.out.println(String.format("** userOperation -> getUserProfile -> properties -> thumbnail_image : %s", profile.getProperties().getThumbnail_image()));
 		System.out.println(String.format("** userOperation -> getUserProfile -> properteis -> profile_image : %s", profile.getProperties().getProfile_image()));
+		System.out.println(profile.toJsonString(true));
 		System.out.println("********************************************************");
 	
 		//kakao story
@@ -67,6 +69,7 @@ public class KakaoTemplateTest {
 		System.out.println("********************************************************");
 		KakaoStoryProfile storyProfile = kakao.storyOperation().isStoryUser();
 		System.out.println(String.format("** storyOperation -> isStoryUser : %b", storyProfile.getIsStoryUser()));
+		System.out.println(storyProfile.toJsonString(true));
 		
 		storyProfile = kakao.storyOperation().getUserProfile();
 		System.out.println(String.format("** storyOperation -> getUserProfile -> nickName : %s", storyProfile.getNickName()));
@@ -76,6 +79,7 @@ public class KakaoTemplateTest {
 		System.out.println(String.format("** storyOperation -> getUserProfile -> permalink : %s", storyProfile.getPermalink()));
 		System.out.println(String.format("** storyOperation -> getUserProfile -> birthday : %s", storyProfile.getBirthday()));
 		System.out.println(String.format("** storyOperation -> getUserProfile -> birthdayType : %s", storyProfile.getBirthdayType()));
+		System.out.println(storyProfile.toJsonString(true));
 		System.out.println("********************************************************");
 		
 		//kakao talk
@@ -87,6 +91,7 @@ public class KakaoTemplateTest {
 		System.out.println(String.format("** talkOperation -> getUserProfile -> profileImageURL : %s", talkProfile.getProfileImageURL()));
 		System.out.println(String.format("** talkOperation -> getUserProfile -> thumbnailURL : %s", talkProfile.getThumbnailURL()));
 		System.out.println(String.format("** talkOperation -> getUserProfile -> countryISO : %s", talkProfile.getCountryISO()));
+		System.out.println(talkProfile.toJsonString(true));
 		System.out.println("********************************************************");
 		
 	}
@@ -216,7 +221,7 @@ public class KakaoTemplateTest {
 		System.out.println("********************************************************");
 		System.out.println("** Story my story operation");
 		System.out.println("********************************************************");
-		MyStory myStory = kakao.storyOperation().myStory("_91mz53.JQhjkAm71x0");
+		MyStory myStory = kakao.storyOperation().myStory("_91mz53.6AoavE1Izn7");
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(myStory));
@@ -247,6 +252,20 @@ public class KakaoTemplateTest {
 		System.out.println("** Story delete my story operation");
 		System.out.println("********************************************************");
 		kakao.storyOperation().deleteMyStory("_91mz53.f91bcVG6zX9");
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void accessTokenInfo() {
+		System.out.println("********************************************************");
+		System.out.println("** Kakao rest api access token infomation check");
+		System.out.println("********************************************************");
+		try {
+			AccessTokenInfo accessTokenInfo = kakao.userOperation().accessTokenInfo();
+			System.out.println(accessTokenInfo.toJsonString(true));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		System.out.println("********************************************************");
 	}
 }

@@ -1,12 +1,15 @@
 package org.springframework.social.kakao.api;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-public class StoryLinkInfo {
+public class StoryLinkInfo extends KakaoObject implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private String url;
 	private String requested_url;
 	private String host;
@@ -89,27 +92,5 @@ public class StoryLinkInfo {
 		return site_name;
 	}
 	
-	/**
-	 * <pre>
-	 * Json string 형태로 데이터를 변환한다.
-	 * </pre>
-	 * @param prettyPrint
-	 * @return
-	 */
-	public String toJsonString(boolean prettyPrint) {
-		ObjectMapper objectMapper = new ObjectMapper();
-		
-		try {
-			if (prettyPrint) {
-				return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
-			} else {
-				return objectMapper.writeValueAsString(this);
-			}
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
-
 	StoryLinkInfo(){}
 }
