@@ -1,6 +1,12 @@
 # spring-social-kakao
 spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 library.
 
+2015.02.09
+------------------------------------------------------
+- access token의 상태 조회 API 호출 추가
+- 응답 데이터 맵핑을 위한 dmain 객체 KakaoObject 상속 받도록 수정
+- KakaoObject.java 에 toJsonString 메서드 추가
+
 2015.01.29
 ------------------------------------------------------
 - 하나의 내 스토리 정보 가져오기 API호출 추가
