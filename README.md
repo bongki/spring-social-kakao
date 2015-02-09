@@ -1,7 +1,7 @@
 # spring-social-kakao
 spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 library.
 
-# 추가 작업 필요 항목
+추가 작업 필요 항목
 ------------------------------------------------------
 - 이미지 파일 업로드 시 n개의 파일 업로드 과정에 gif animation 파일이 포함 되었을때 gif animation 파일을 제외한 나머지 파일 필터링
 - 사용자 정보 추가 API구현 및 사용자 정보 추가 시 카카오 프로필 조회의 properties에 추가된 custom field 대응 처리
