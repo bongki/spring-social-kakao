@@ -7,16 +7,16 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 
 구현 필요 API 목록
 ------------------------------------------------------
-- 사용자 관리 > 로그아웃 : https://developer.kakao.com/docs/restapi#사용자-관리-로그아웃
-- 사용자 관리 > 앱연결 : https://developer.kakao.com/docs/restapi#사용자-관리-앱-연결
 - 사용자 관리 > 사용자 리스트 요청 (admin) : https://developer.kakao.com/docs/restapi#사용자-관리-사용자-리스트-요청
 - 사용자 관리 > 사용자 정보 요청 (admin) : https://developer.kakao.com/docs/restapi#사용자-관리-사용자-정보-요청
 - 푸시 알림 > 모든 API : https://developer.kakao.com/docs/restapi#푸시-알림
 
 2015.02.10
 ------------------------------------------------------
-- 사용자 정보 저장 API호출 추가
+- 사용자 관리 사용자 정보 저장 API호출 추가
 - 사용자 정보에 추가하는 Custom field에 대하여 사용자 정보 조회 시 응답 데이터에 맵핑이 정상처리 될 수 있도록 KakaoObject 에 어노테이션(@JsonAnySetter, @JsonAnyGetter) 추가
+- 사용자 관리 로그아웃 API호출 추가
+- 사용자 관리 앱연결 API호출 추가
 
 2015.02.09
 ------------------------------------------------------
