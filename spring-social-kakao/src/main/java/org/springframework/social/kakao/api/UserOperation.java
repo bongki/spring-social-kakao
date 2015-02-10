@@ -42,4 +42,15 @@ public interface UserOperation {
 	 * @return
 	 */
 	AccessTokenInfo accessTokenInfo();
+	
+	/**
+	 * <pre>
+	 * 해당 access token을 발급받은 사용자의 프로필 정보를 수정합니다.
+	 *  - 관리자 페이지에서 확인가능한 default field이외에 개발자가 추가한 custom field의 데이터에 대한 데이터를 셋팅하는데 사용합니다.
+	 *  - 반환 데이터에는 업데이트된 사용자의 id 만 존재합니다. 
+	 * </pre>
+	 * @param profileJsonString
+	 * @return
+	 */
+	KakaoProfile updateProfile(String profileJsonString);
 }

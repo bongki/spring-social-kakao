@@ -3,7 +3,9 @@ package org.springframework.social.kakao.api.impl;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +46,7 @@ public class KakaoTemplateTest {
 	}
 	
 	@Test
-	public void getProfile() {
+	public void getKakaoProfile() {
 		//kakao
 		System.out.println("********************************************************");
 		System.out.println("** Kakao operation");
@@ -62,7 +64,15 @@ public class KakaoTemplateTest {
 		System.out.println(String.format("** userOperation -> getUserProfile -> properteis -> profile_image : %s", profile.getProperties().getProfile_image()));
 		System.out.println(profile.toJsonString(true));
 		System.out.println("********************************************************");
+		System.out.println("********************************************************");
+		System.out.println("** Kakao user profile properties extra data (custom field)");
+		System.out.println("********************************************************");
+		System.out.println(profile.getProperties().getExtraData());
+		System.out.println("********************************************************");
+	}
 	
+	@Test
+	public void getStoryProfile() {
 		//kakao story
 		System.out.println("********************************************************");
 		System.out.println("** Story operation");
@@ -70,7 +80,6 @@ public class KakaoTemplateTest {
 		KakaoStoryProfile storyProfile = kakao.storyOperation().isStoryUser();
 		System.out.println(String.format("** storyOperation -> isStoryUser : %b", storyProfile.getIsStoryUser()));
 		System.out.println(storyProfile.toJsonString(true));
-		
 		storyProfile = kakao.storyOperation().getUserProfile();
 		System.out.println(String.format("** storyOperation -> getUserProfile -> nickName : %s", storyProfile.getNickName()));
 		System.out.println(String.format("** storyOperation -> getUserProfile -> profileImageURL : %s", storyProfile.getProfileImageURL()));
@@ -81,7 +90,10 @@ public class KakaoTemplateTest {
 		System.out.println(String.format("** storyOperation -> getUserProfile -> birthdayType : %s", storyProfile.getBirthdayType()));
 		System.out.println(storyProfile.toJsonString(true));
 		System.out.println("********************************************************");
-		
+	}
+	
+	@Test
+	public void getTalkProfile() {
 		//kakao talk
 		System.out.println("********************************************************");
 		System.out.println("** Talk operation");
@@ -263,6 +275,25 @@ public class KakaoTemplateTest {
 		try {
 			AccessTokenInfo accessTokenInfo = kakao.userOperation().accessTokenInfo();
 			System.out.println(accessTokenInfo.toJsonString(true));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void updateProfileCustomField() {
+		Map<String, Object> properties = new LinkedHashMap<String, Object>();
+		properties.put("description", "Field update by API - " + DATE_FORMAT.format(new Date()));
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		System.out.println("********************************************************");
+		System.out.println("** Kakao rest api profile update");
+		System.out.println("********************************************************");
+		try {
+			KakaoProfile kakaoProfile = kakao.userOperation().updateProfile(objectMapper.writeValueAsString(properties));
+			System.out.println(kakaoProfile.toJsonString(true));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

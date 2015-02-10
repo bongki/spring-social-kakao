@@ -3,6 +3,8 @@ package org.springframework.social.kakao.api;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,10 +15,12 @@ public class KakaoObject {
 		this.extraData = new HashMap<String, Object>();
 	}
 	
+	@JsonAnyGetter
 	public Map<String, Object> getExtraData() {
 		return this.extraData;
 	}
 	
+	@JsonAnySetter
 	public void add(String key, Object value) {
 		this.extraData.put(key, value);
 	}

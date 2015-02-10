@@ -1,6 +1,10 @@
 package org.springframework.social.kakao.api;
 
-public class KakaoProfileProperties {
+import java.io.Serializable;
+
+public class KakaoProfileProperties extends KakaoObject implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private String nickname;
 	private String thumbnail_image;
 	private String profile_image;

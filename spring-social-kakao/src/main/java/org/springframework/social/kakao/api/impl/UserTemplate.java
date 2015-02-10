@@ -3,6 +3,8 @@ package org.springframework.social.kakao.api.impl;
 import org.springframework.social.kakao.api.AccessTokenInfo;
 import org.springframework.social.kakao.api.KakaoProfile;
 import org.springframework.social.kakao.api.UserOperation;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 public class UserTemplate extends AbstractKakaoOperations implements UserOperation {
@@ -38,5 +40,14 @@ public class UserTemplate extends AbstractKakaoOperations implements UserOperati
 		requireAuthorization();
 		
 		return restTemplate.getForObject(buildApiUri("/v1/user/access_token_info"), AccessTokenInfo.class);
+	}
+	
+	public KakaoProfile updateProfile(String profileJsonString) {
+		requireAuthorization();
+		
+		MultiValueMap<String, Object> param = new LinkedMultiValueMap<String, Object>();
+		param.set("properties", profileJsonString);
+		
+		return restTemplate.postForObject(buildApiUri("/v1/user/update_profile"), param, KakaoProfile.class);
 	}
 }
