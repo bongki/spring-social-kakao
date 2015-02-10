@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.social.kakao.api.AccessTokenInfo;
 import org.springframework.social.kakao.api.Kakao;
+import org.springframework.social.kakao.api.KakaoIds;
 import org.springframework.social.kakao.api.KakaoProfile;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
 import org.springframework.social.kakao.api.KakaoTalkProfile;
@@ -25,7 +26,7 @@ import org.springframework.social.kakao.api.StoryPostingResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class KakaoTemplateTest {
-	static final String ACCESS_TOKEN = ""; //insert access token
+	static final String ACCESS_TOKEN = "CVSkokerXNmQusFGiuYBn-QxDpf57z_AIfDyaKwQQjQAAAFLch7EzQ"; //insert access token
 	static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 	
 	Kakao kakao;
@@ -298,5 +299,11 @@ public class KakaoTemplateTest {
 			e.printStackTrace();
 		}
 		System.out.println("********************************************************");
+	}
+	
+	@Test
+	public void ids() {
+		KakaoIds kakaoIds = kakao.userOperation().ids("admin key");
+		System.out.println(kakaoIds.toJsonString(true));
 	}
 }

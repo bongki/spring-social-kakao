@@ -1,6 +1,5 @@
 package org.springframework.social.kakao.connect;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -26,7 +25,7 @@ public class KakaoOAuth2Template extends OAuth2Template {
 	protected AccessGrant postForAccessGrant(String accessTokenUrl, MultiValueMap<String, String> parameters) {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-		headers.setAccept(new ArrayList<MediaType>(Arrays.asList(new MediaType[]{MediaType.ALL})));
+		headers.setAccept(Arrays.asList(new MediaType[]{MediaType.ALL}));
 		HttpEntity<?> requestEntity = new HttpEntity<MultiValueMap<String, String>>(parameters, headers);
 		
 		LinkedHashMap<String, Object> response = getRestTemplate().postForObject(accessTokenUrl, requestEntity, LinkedHashMap.class);
