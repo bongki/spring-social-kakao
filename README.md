@@ -4,7 +4,14 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 추가 작업 필요 항목
 ------------------------------------------------------
 - 이미지 파일 업로드 시 n개의 파일 업로드 과정에 gif animation 파일이 포함 되었을때 gif animation 파일을 제외한 나머지 파일 필터링
-- 사용자 정보 추가 API구현 및 사용자 정보 추가 시 카카오 프로필 조회의 properties에 추가된 custom field 대응 처리
+
+구현 필요 API 목록
+------------------------------------------------------
+- 사용자 관리 > 로그아웃 : https://developer.kakao.com/docs/restapi#사용자-관리-로그아웃
+- 사용자 관리 > 앱연결 : https://developer.kakao.com/docs/restapi#사용자-관리-앱-연결
+- 사용자 관리 > 사용자 리스트 요청 (admin) : https://developer.kakao.com/docs/restapi#사용자-관리-사용자-리스트-요청
+- 사용자 관리 > 사용자 정보 요청 (admin) : https://developer.kakao.com/docs/restapi#사용자-관리-사용자-정보-요청
+- 푸시 알림 > 모든 API : https://developer.kakao.com/docs/restapi#푸시-알림
 
 2015.02.10
 ------------------------------------------------------
@@ -34,4 +41,4 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 2015.01.27
 ------------------------------------------------------
 - code, accessToken 획득 기능 추가
-- 카카오, 카카오 스토리, 카카오 톡 프로파일 정보 조회 API호출 추가
+- 카카오, 카카오 스토리, 카카오 톡 프로파일 정보 조회 API호출 추가 (me)
