@@ -82,7 +82,6 @@ public interface UserOperation {
 	 *    관련사항은 아래의 kakao rest api 개발가이드 페이지를 참조 하시기 바랍니다.
 	 *    https://developer.kakao.com/docs/restapi#사용자-관리-사용자-리스트-요청 
 	 * </pre>
-	 * @param adminKey 개발자페이지에서 확인 가능한 admin key 값을 입력합니다.
 	 * @return
 	 * @deprecated
 	 * <pre>
@@ -91,16 +90,15 @@ public interface UserOperation {
 	 * </pre>
 	 */
 	@Deprecated
-	KakaoIds ids(String adminKey);
+	KakaoIds ids();
 	
 	/**
 	 * <pre>
 	 * 사용자 목록 가져오기
 	 *  - admin key를 이용하여 해당 앱에 연결되어있는 사용자 목록을 조회합니다.
 	 *    검색 관련 파라메터를 셋팅하여 조회 할때 사용하며 각 파라메터 정보는 
-	 *    ids(String adminKey) 메서드의 주석에 나와있는 개발가이드 페이지를 참조 하시기 바랍니다.
+	 *    ids() 메서드의 주석에 나와있는 개발가이드 페이지를 참조 하시기 바랍니다.
 	 * </pre>
-	 * @param adminKey
 	 * @param limit
 	 * @param fromId
 	 * @param order
@@ -112,5 +110,21 @@ public interface UserOperation {
 	 * </pre>
 	 */
 	@Deprecated
-	KakaoIds ids(String adminKey, String limit, String fromId, String order);
+	KakaoIds ids(String limit, String fromId, String order);
+	
+	/**
+	 * <pre>
+	 * 사용자 정보 조회하기.
+	 * 해당 기능은 관리자의 admin key와 특정 유저 id (kakao 플랫폼에서 발급되는 유저 고유번호)를 이용하여 해당 사용자의 정보를 조회한다.
+	 * </pre>
+	 * @param userId
+	 * @return
+	 * @deprecated
+	 * <pre>
+	 * HttpHeader 의 Authorization 항목이 Bearer로 덮어씌워지는 현상이 있어서 request 요청 불가 해결 필요.
+	 *  - org.springframework.social.oauth2.OAuth2RequestInterceptor#intercept 에 의해 강제적으로 덮어씌워짐.
+	 * </pre>
+	 */
+	@Deprecated
+	KakaoProfile getUserProfile(String userId);
 }

@@ -2,6 +2,7 @@ package org.springframework.social.kakao.api.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -10,6 +11,8 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.social.kakao.api.AccessTokenInfo;
+import org.springframework.social.kakao.api.ForApns;
+import org.springframework.social.kakao.api.ForGcm;
 import org.springframework.social.kakao.api.Kakao;
 import org.springframework.social.kakao.api.KakaoIds;
 import org.springframework.social.kakao.api.KakaoProfile;
@@ -22,11 +25,14 @@ import org.springframework.social.kakao.api.StoryNotePosting;
 import org.springframework.social.kakao.api.StoryPhotoPosting;
 import org.springframework.social.kakao.api.StoryPhotoUpload;
 import org.springframework.social.kakao.api.StoryPostingResult;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class KakaoTemplateTest {
-	static final String ACCESS_TOKEN = "CVSkokerXNmQusFGiuYBn-QxDpf57z_AIfDyaKwQQjQAAAFLch7EzQ"; //insert access token
+	static final String ACCESS_TOKEN = "access token"; //insert access token
+	static final String ADMIN_KEY = "admin key"; //insert admin key
 	static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 	
 	Kakao kakao;
@@ -35,7 +41,7 @@ public class KakaoTemplateTest {
 	
 	@Before
 	public void before() {
-		kakao = new KakaoTemplate(ACCESS_TOKEN);
+		kakao = new KakaoTemplate(ACCESS_TOKEN, ADMIN_KEY);
 	
 		List<String> photoFileList = new ArrayList<String>();
 		photoFileList.add("D:\\sample_photo\\1.jpg");
@@ -303,7 +309,45 @@ public class KakaoTemplateTest {
 	
 	@Test
 	public void ids() {
-		KakaoIds kakaoIds = kakao.userOperation().ids("admin key");
+		KakaoIds kakaoIds = kakao.userOperation().ids();
 		System.out.println(kakaoIds.toJsonString(true));
+	}
+	
+	@Test
+	public void pushSendMessageTest() {
+		List<String> uuids = new ArrayList<String>();
+		uuids.add("uuid_1");
+		uuids.add("uuid_2");
+		uuids.add("uuid_3");
+		
+		ForApns forApns = new ForApns(1, "default", true, "my message. blah~blah~");
+		forApns.addCustom_field("apns_custom1", "apns_value1");
+		forApns.addCustom_field("apns_custom2", "apns_value2");
+		
+		ForGcm forGcm = new ForGcm("123", true, "");
+		forGcm.addCustom_field("gcm_custom1", "gcm_value1");
+		forGcm.addCustom_field("gcm_custom2", "gcm_value2");
+		
+		MultiValueMap<String, Object> param = new LinkedMultiValueMap<String, Object>();
+		param.set("uuids", uuids);
+		param.set("for_apns", forApns);
+		param.set("for_gcm", forGcm);
+		
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			System.out.println("********************************************************");
+			System.out.println("** apns message");
+			System.out.println("********************************************************");
+			System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(param));
+			System.out.println("********************************************************");
+			System.out.println("********************************************************");
+			System.out.println("** apns message loc");
+			System.out.println("********************************************************");
+			forApns.setMessage("locKey", Arrays.asList(new String[]{"arg1", "arg2"}));
+			System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(param));
+			System.out.println("********************************************************");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
