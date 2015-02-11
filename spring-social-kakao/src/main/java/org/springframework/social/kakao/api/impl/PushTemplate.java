@@ -8,10 +8,12 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.social.kakao.api.ForApns;
 import org.springframework.social.kakao.api.ForGcm;
 import org.springframework.social.kakao.api.PushOperation;
 import org.springframework.social.kakao.api.PushToken;
+import org.springframework.social.kakao.api.impl.AbstractKakaoOperations.AdminKeyHeaderOAuth2RequestInterceptor;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -39,6 +41,8 @@ public class PushTemplate extends AbstractKakaoOperations implements PushOperati
 		
 		HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<MultiValueMap<String,String>>(parameters, headers);
 		
+		restTemplate.setInterceptors(Arrays.asList(new ClientHttpRequestInterceptor[]{new AdminKeyHeaderOAuth2RequestInterceptor()}));
+		
 		return restTemplate.postForObject(buildApiUri("/v1/push/register"), entity, String.class);
 	}
 	
@@ -47,6 +51,8 @@ public class PushTemplate extends AbstractKakaoOperations implements PushOperati
 		
 		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<String, String>();
 		parameters.set("uuid", uuid);
+		
+		restTemplate.setInterceptors(Arrays.asList(new ClientHttpRequestInterceptor[]{new AdminKeyHeaderOAuth2RequestInterceptor()}));
 		
 		ResponseEntity<PushToken[]> response = restTemplate.exchange(buildApiUri("/v1/push/tokens", parameters)
 																		, HttpMethod.GET, new HttpEntity<Object>(headers), PushToken[].class);
@@ -63,6 +69,8 @@ public class PushTemplate extends AbstractKakaoOperations implements PushOperati
 		parameters.set("push_type", pushType);
 		
 		HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<MultiValueMap<String,String>>(parameters, headers);
+		
+		restTemplate.setInterceptors(Arrays.asList(new ClientHttpRequestInterceptor[]{new AdminKeyHeaderOAuth2RequestInterceptor()}));
 		
 		restTemplate.postForLocation(buildApiUri("/v1/push/deregister"), entity);
 	}
@@ -88,6 +96,8 @@ public class PushTemplate extends AbstractKakaoOperations implements PushOperati
 		}
 		
 		HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<MultiValueMap<String,Object>>(parameters, headers);
+		
+		restTemplate.setInterceptors(Arrays.asList(new ClientHttpRequestInterceptor[]{new AdminKeyHeaderOAuth2RequestInterceptor()}));
 		
 		restTemplate.postForLocation(buildApiUri("/v1/push/send"), entity);
 	}
