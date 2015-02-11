@@ -12,6 +12,7 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 
 2015.02.11
 ------------------------------------------------------
+- admin key 사용 방식 변경 (필요 메서드 파라메터에서 KakaoTemplate 생성자 파라메터로 변경)
 - 사용자 관리 > 사용자 리스트 요청 API호출 추가 (admin key 사용)
 - 사용자 관리 > 사용자 정보 요청 API호출 추가 (admin key 사용)
 - 푸시 알림 > 모든 API 호출 추가 (admin key 사용)
