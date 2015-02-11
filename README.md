@@ -8,13 +8,13 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 이슈사항
 ------------------------------------------------------
 - 프로젝트가 MS949 인코딩으로 생성되었음. UTF-8으로의 변경 필요
-- [Authorization: KakaoAK {adminKey} 오류로 인한 400 에러](https://github.com/bongki/spring-social-kakao/issues/1)
+- [Authorization: KakaoAK {adminKey} 400 에러에 의해 기능 사용불가 버그(admin key를 사용하는 모든 API)](https://github.com/bongki/spring-social-kakao/issues/1)
 
-구현 필요 API 목록
+2015.02.11
 ------------------------------------------------------
-- 사용자 관리 > 사용자 리스트 요청 (admin) : https://developer.kakao.com/docs/restapi#사용자-관리-사용자-리스트-요청
-- 사용자 관리 > 사용자 정보 요청 (admin) : https://developer.kakao.com/docs/restapi#사용자-관리-사용자-정보-요청
-- 푸시 알림 > 모든 API : https://developer.kakao.com/docs/restapi#푸시-알림
+- 사용자 관리 > 사용자 리스트 요청 API호출 추가 (admin key 사용)
+- 사용자 관리 > 사용자 정보 요청 API호출 추가 (admin key 사용)
+- 푸시 알림 > 모든 API 호출 추가 (admin key 사용)
 
 2015.02.10
 ------------------------------------------------------
