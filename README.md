@@ -4,7 +4,11 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 추가 작업 필요 항목
 ------------------------------------------------------
 - 이미지 파일 업로드 시 n개의 파일 업로드 과정에 gif animation 파일이 포함 되었을때 gif animation 파일을 제외한 나머지 파일 필터링
+
+이슈사항
+------------------------------------------------------
 - 프로젝트가 MS949 인코딩으로 생성되었음. UTF-8으로의 변경 필요
+- [Authorization: KakaoAK {adminKey} 오류로 인한 400 에러](https://github.com/bongki/spring-social-kakao/issues/1)
 
 구현 필요 API 목록
 ------------------------------------------------------
