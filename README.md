@@ -14,6 +14,7 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 ------------------------------------------------------
 - spring social facebook을 참고하여 만든 RestTemplate 이외에 admin key 사용을 위한 RestTemplate 객체 추가
 - admin key를 사용하는 api 호출 부분 추가한 RestTemplate 사용하도록 수정
+- 버전 넘버링 0.4.0 에서 1.0.0으로 변경
 
 2015.02.11
 ------------------------------------------------------
