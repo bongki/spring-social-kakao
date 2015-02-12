@@ -8,7 +8,12 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 이슈사항
 ------------------------------------------------------
 - 프로젝트가 MS949 인코딩으로 생성되었음. UTF-8으로의 변경 필요
-- [Authorization: KakaoAK {adminKey} 400 에러에 의해 기능 사용불가 버그(admin key를 사용하는 모든 API)](https://github.com/bongki/spring-social-kakao/issues/1)
+- [<s>Authorization: KakaoAK {adminKey} 400 에러에 의해 기능 사용불가 버그(admin key를 사용하는 모든 API)</s>](https://github.com/bongki/spring-social-kakao/issues/1) clear
+
+2015.02.12
+------------------------------------------------------
+- spring social facebook을 참고하여 만든 RestTemplate 이외에 admin key 사용을 위한 RestTemplate 객체 추가
+- admin key를 사용하는 api 호출 부분 추가한 RestTemplate 사용하도록 수정
 
 2015.02.11
 ------------------------------------------------------
