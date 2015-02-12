@@ -10,6 +10,9 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.social.kakao.api.AccessTokenInfo;
 import org.springframework.social.kakao.api.ForApns;
 import org.springframework.social.kakao.api.ForGcm;
@@ -25,8 +28,11 @@ import org.springframework.social.kakao.api.StoryNotePosting;
 import org.springframework.social.kakao.api.StoryPhotoPosting;
 import org.springframework.social.kakao.api.StoryPhotoUpload;
 import org.springframework.social.kakao.api.StoryPostingResult;
+import org.springframework.social.support.ClientHttpRequestFactorySelector;
+import org.springframework.social.support.URIBuilder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -314,6 +320,13 @@ public class KakaoTemplateTest {
 	}
 	
 	@Test
+	public void getKakaoProfileByAdmin() {
+		String userId = "8746385";
+		KakaoProfile profile = kakao.userOperation().getUserProfile(userId);
+		System.out.println(profile.toJsonString(true));
+	}
+	
+	@Test
 	public void pushSendMessageTest() {
 		List<String> uuids = new ArrayList<String>();
 		uuids.add("uuid_1");
@@ -349,5 +362,25 @@ public class KakaoTemplateTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void plainRestTemplateTest() {
+		RestTemplate restTemplate = new RestTemplate(ClientHttpRequestFactorySelector.getRequestFactory());
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+		headers.setAccept(Arrays.asList(new MediaType[]{MediaType.ALL}));
+		headers.set("Authorization", "KakaoAK my-admin-key");
+		
+		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
+		param.set("limit", "");
+		param.set("fromId", "");
+		param.set("order", "");
+		
+		
+		KakaoIds kakaoIds = restTemplate.postForObject(URIBuilder.fromUri("https://kapi.kakao.com/v1/user/ids").queryParams(param).build(), new HttpEntity<Object>(headers), KakaoIds.class);
+		
+		System.out.println(kakaoIds.toJsonString(true));
 	}
 }

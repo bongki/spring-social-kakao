@@ -32,12 +32,6 @@ public interface Kakao extends ApiBinding {
 	 * 푸시 알림 API 호출
 	 * </pre>
 	 * @return
-	 * @deprecated
-	 * <pre>
-	 * 해당 operation 내의 모든 메서드는 admin key를 사용중에 있음.
-	 * user operation 내의 일부 메서드와 같이 admin key 이슈 해결필요
-	 * </pre>
 	 */
-	@Deprecated
 	PushOperation pushOperation();
 }

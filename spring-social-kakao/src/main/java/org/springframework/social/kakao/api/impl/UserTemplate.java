@@ -1,12 +1,5 @@
 package org.springframework.social.kakao.api.impl;
 
-import java.util.Arrays;
-
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.social.kakao.api.AccessTokenInfo;
 import org.springframework.social.kakao.api.KakaoIds;
 import org.springframework.social.kakao.api.KakaoProfile;
@@ -18,13 +11,12 @@ import org.springframework.web.client.RestTemplate;
 
 public class UserTemplate extends AbstractKakaoOperations implements UserOperation {
 	private final RestTemplate restTemplate;
+	private final RestTemplate adminRestTemplate;
 	
-	private final String adminKey;
-	
-	public UserTemplate(RestTemplate restTemplate, boolean isAuthorized, String adminKey) {
+	public UserTemplate(RestTemplate restTemplate, RestTemplate adminRestTemplate, boolean isAuthorized) {
 		super(isAuthorized);
 		this.restTemplate = restTemplate;
-		this.adminKey = adminKey;
+		this.adminRestTemplate = adminRestTemplate;
 	}
 
 	public long getProfileId() {
@@ -83,32 +75,18 @@ public class UserTemplate extends AbstractKakaoOperations implements UserOperati
 	}
 	
 	public KakaoIds ids(String limit, String fromId, String order) {
-		HttpHeaders headers = getAdminKeyHeader(adminKey);
-		
 		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
 		param.set("limit", limit);
 		param.set("fromId", fromId);
 		param.set("order", order);
 		
-		restTemplate.setInterceptors(Arrays.asList(new ClientHttpRequestInterceptor[]{new AdminKeyHeaderOAuth2RequestInterceptor()}));
-		
-		ResponseEntity<KakaoIds> response = restTemplate.exchange(buildApiUri("/v1/user/ids", param)
-																	, HttpMethod.GET, new HttpEntity<Object>(headers), KakaoIds.class);
-		
-		return response.getBody();
+		return adminRestTemplate.getForObject(buildApiUri("/v1/user/ids", param), KakaoIds.class);
 	}
 	
 	public KakaoProfile getUserProfile(String userId) {
-		HttpHeaders headers = getAdminKeyHeader(adminKey);
-		
 		MultiValueMap<String, String> param = new LinkedMultiValueMap<String, String>();
 		param.set("user_id", userId);
 		
-		restTemplate.setInterceptors(Arrays.asList(new ClientHttpRequestInterceptor[]{new AdminKeyHeaderOAuth2RequestInterceptor()}));
-		
-		ResponseEntity<KakaoProfile> response = restTemplate.exchange(buildApiUri("/v1/user/me")
-																		, HttpMethod.GET, new HttpEntity<Object>(headers), KakaoProfile.class);
-		
-		return response.getBody();
+		return adminRestTemplate.getForObject(buildApiUri("/v1/user/me", param), KakaoProfile.class);
 	}
 }

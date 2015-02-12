@@ -3,9 +3,6 @@ package org.springframework.social.kakao.api;
 import java.io.Serializable;
 import java.util.List;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 
 public class StoryLinkInfo extends KakaoObject implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -9,6 +9,7 @@ public class KakaoServiceProvider extends AbstractOAuth2ServiceProvider<Kakao> {
 		super(new KakaoOAuth2Template(clientId));
 	}
 	
+	@SuppressWarnings("deprecation")
 	public Kakao getApi(String accessToken) {
 		return new KakaoTemplate(accessToken);
 	}

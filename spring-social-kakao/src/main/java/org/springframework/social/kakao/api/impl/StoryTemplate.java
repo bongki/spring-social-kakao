@@ -3,7 +3,6 @@ package org.springframework.social.kakao.api.impl;
 import java.util.List;
 
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.social.kakao.api.AbstractStoryPosting;
 import org.springframework.social.kakao.api.KakaoStoryProfile;
 import org.springframework.social.kakao.api.MyStory;

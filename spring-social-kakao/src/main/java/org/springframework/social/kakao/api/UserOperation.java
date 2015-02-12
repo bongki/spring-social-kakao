@@ -83,13 +83,7 @@ public interface UserOperation {
 	 *    https://developer.kakao.com/docs/restapi#사용자-관리-사용자-리스트-요청 
 	 * </pre>
 	 * @return
-	 * @deprecated
-	 * <pre>
-	 * HttpHeader 의 Authorization 항목이 Bearer로 덮어씌워지는 현상이 있어서 request 요청 불가 해결 필요.
-	 *  - org.springframework.social.oauth2.OAuth2RequestInterceptor#intercept 에 의해 강제적으로 덮어씌워짐.
-	 * </pre>
 	 */
-	@Deprecated
 	KakaoIds ids();
 	
 	/**
@@ -103,13 +97,7 @@ public interface UserOperation {
 	 * @param fromId
 	 * @param order
 	 * @return
-	 * @deprecated
-	 * <pre>
-	 * HttpHeader 의 Authorization 항목이 Bearer로 덮어씌워지는 현상이 있어서 request 요청 불가 해결 필요.
-	 *  - org.springframework.social.oauth2.OAuth2RequestInterceptor#intercept 에 의해 강제적으로 덮어씌워짐.
-	 * </pre>
 	 */
-	@Deprecated
 	KakaoIds ids(String limit, String fromId, String order);
 	
 	/**
@@ -119,12 +107,6 @@ public interface UserOperation {
 	 * </pre>
 	 * @param userId
 	 * @return
-	 * @deprecated
-	 * <pre>
-	 * HttpHeader 의 Authorization 항목이 Bearer로 덮어씌워지는 현상이 있어서 request 요청 불가 해결 필요.
-	 *  - org.springframework.social.oauth2.OAuth2RequestInterceptor#intercept 에 의해 강제적으로 덮어씌워짐.
-	 * </pre>
 	 */
-	@Deprecated
 	KakaoProfile getUserProfile(String userId);
 }
