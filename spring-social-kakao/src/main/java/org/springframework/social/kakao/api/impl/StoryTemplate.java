@@ -38,11 +38,11 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 	
 	public StoryPostingResult postNote(StoryNotePosting storyNotePosting) {
 		requireAuthorization();
-		//ÆÄ¶ó¸ŞÅÍ »ı¼ºÇÏ±â
+		//íŒŒë¼ë©”í„° ìƒì„±í•˜ê¸°
 		MultiValueMap<String, Object> param = postingCommonParamSetting(storyNotePosting);
 		param.set("content", storyNotePosting.getContent());
 		
-		//API ¿äÃ»
+		//API ìš”ì²­
 		return restTemplate.postForObject(buildApiUri("/v1/api/story/post/note"), param, StoryPostingResult.class);
 	}
 	
@@ -50,10 +50,10 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 	public List<String> uploadPhoto(StoryPhotoUpload storyPhotoUpload) {
 		List<String> filePathList = storyPhotoUpload.getFilePathList();
 		
-		//¾÷·Îµå ´ë»ó ÀÌ¹ÌÁö ÆÄÀÏ¿¡ ´ëÇÏ¿© gif animation ÆÄÀÏÀÌ ÀÖ´ÂÁö Á¶»çÇÏ¿© gif animation ÆÄÀÏÀÌ Á¸Àç ÇÑ´Ù¸é 
-		//ÇØ´ç gif animation ÀÌ¹ÌÁö ÀÌ¿ÜÀÇ ´Ù¸¥ ÀÌ¹ÌÁö µî·Ï º¸·ù Ã³¸® ¹æ¾È °áÁ¤ ÇÊ¿ä.
-		// 1. ¶óÀÌºê·¯¸®Â÷¿ø¿¡¼­ ÇØ´ç Ã³¸®¸¦ Áö¿ø ÇÒ°ÍÀÎ°¡. (¾÷·Îµå Á÷Àü ÇÊÅÍ¸µ)
-		// 2. ÇØ´ç ¶óÀÌºê·¯¸®¸¦ È°¿ëÇÏ´Â ÇÁ·Î±×·¥ ¼Ò½º»ó¿¡¼­ ÇØ´ç Ã³¸®¸¦ ±¸ÇöÇÏµµ·Ï ÇÒ°ÍÀÎ°¡.
+		//ì—…ë¡œë“œ ëŒ€ìƒ ì´ë¯¸ì§€ íŒŒì¼ì— ëŒ€í•˜ì—¬ gif animation íŒŒì¼ì´ ìˆëŠ”ì§€ ì¡°ì‚¬í•˜ì—¬ gif animation íŒŒì¼ì´ ì¡´ì¬ í•œë‹¤ë©´ 
+		//í•´ë‹¹ gif animation ì´ë¯¸ì§€ ì´ì™¸ì˜ ë‹¤ë¥¸ ì´ë¯¸ì§€ ë“±ë¡ ë³´ë¥˜ ì²˜ë¦¬ ë°©ì•ˆ ê²°ì • í•„ìš”.
+		// 1. ë¼ì´ë¸ŒëŸ¬ë¦¬ì°¨ì›ì—ì„œ í•´ë‹¹ ì²˜ë¦¬ë¥¼ ì§€ì› í• ê²ƒì¸ê°€. (ì—…ë¡œë“œ ì§ì „ í•„í„°ë§)
+		// 2. í•´ë‹¹ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ í™œìš©í•˜ëŠ” í”„ë¡œê·¸ë¨ ì†ŒìŠ¤ìƒì—ì„œ í•´ë‹¹ ì²˜ë¦¬ë¥¼ êµ¬í˜„í•˜ë„ë¡ í• ê²ƒì¸ê°€.
 		MultiValueMap<String, FileSystemResource> param = new LinkedMultiValueMap<String, FileSystemResource>();
 		for (String filePath : filePathList) {
 			param.add("file", new FileSystemResource(filePath));
@@ -65,7 +65,7 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 	public StoryPostingResult postPhoto(StoryPhotoPosting storyPhotoPosting) {
 		requireAuthorization();
 		if (storyPhotoPosting.getStoryPhotoUpload() != null) {
-			//ÀÌ¹ÌÁö ¾÷·Îµå È£ÃâÇÏ¿© °á°ú ´ëÃ¼
+			//ì´ë¯¸ì§€ ì—…ë¡œë“œ í˜¸ì¶œí•˜ì—¬ ê²°ê³¼ ëŒ€ì²´
 			List<String> imageUrlList = uploadPhoto(storyPhotoPosting.getStoryPhotoUpload());
 			storyPhotoPosting.setImageUrlList(imageUrlList);
 		}
@@ -87,12 +87,12 @@ public class StoryTemplate extends AbstractKakaoOperations implements StoryOpera
 
 	public StoryPostingResult postLink(StoryLinkPosting storyLinkPosting) {
 		requireAuthorization();
-		//url Á¤º¸ Ã¼Å©. url °ªÀÌ ÀÖ´Ù¸é linkInfo ¸Ş¼­µå È£Ãâ
+		//url ì •ë³´ ì²´í¬. url ê°’ì´ ìˆë‹¤ë©´ linkInfo ë©”ì„œë“œ í˜¸ì¶œ
 		if (!StringUtils.isEmpty(storyLinkPosting.getUrl())) {
 			storyLinkPosting.setStoryLinkInfo(linkInfo(storyLinkPosting.getUrl()));
 		}
 		
-		//ÆÄ¶ó¸ŞÅÍ ¼ÂÆÃ
+		//íŒŒë¼ë©”í„° ì…‹íŒ…
 		MultiValueMap<String, Object> param = postingCommonParamSetting(storyLinkPosting);
 		param.set("link_info", storyLinkPosting.getStoryLinkInfo().toJsonString(false));
 		param.set("content", storyLinkPosting.getContent());

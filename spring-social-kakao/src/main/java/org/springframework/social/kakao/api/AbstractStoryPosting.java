@@ -2,7 +2,7 @@ package org.springframework.social.kakao.api;
 
 public class AbstractStoryPosting extends KakaoObject {
 	private String permission = "A";
-	private String enableShare = "true"; //Ä«Ä«¿À API ·¹ÆÛ·±½º¿¡´Â ±âº»Àº false¶ó°í ÇÏ³ª °ø°³ ±ÇÇÑÀÇ default°ªÀÌ  A(ÀüÃ¼ °ø°³)ÀÌ¹Ç·Î default°ªÀ» true Á¤ÀÇÇÔ. 
+	private String enableShare = "true"; //ì¹´ì¹´ì˜¤ API ë ˆí¼ëŸ°ìŠ¤ì—ëŠ” ê¸°ë³¸ì€ falseë¼ê³  í•˜ë‚˜ ê³µê°œ ê¶Œí•œì˜ defaultê°’ì´  A(ì „ì²´ ê³µê°œ)ì´ë¯€ë¡œ defaultê°’ì„ true ì •ì˜í•¨. 
 	private String androidExecParam = "";
 	private String iosExecParam = "";
 	private String androidMarketParam = "";
@@ -10,7 +10,7 @@ public class AbstractStoryPosting extends KakaoObject {
 	
 	/**
 	 * <pre>
-	 * Æ÷½ºÆÃ ÇÒ ½ºÅä¸®¸¦ ÀüÃ¼ °ø°³ÇÒÁö Ä£±¸ °ø°³ÇÒÁö ¿©ºÎ.
+	 * í¬ìŠ¤íŒ… í•  ìŠ¤í† ë¦¬ë¥¼ ì „ì²´ ê³µê°œí• ì§€ ì¹œêµ¬ ê³µê°œí• ì§€ ì—¬ë¶€.
 	 * </pre>
 	 * @return
 	 */
@@ -19,12 +19,12 @@ public class AbstractStoryPosting extends KakaoObject {
 	}
 	/**
 	 * <pre>
-	 * Æ÷½ºÆÃ ÇÒ ½ºÅä¸®¸¦ ÀüÃ¼ °ø°³ÇÒÁö Ä£±¸ °ø°³ÇÒÁö ¿©ºÎ.
-	 * F : Ä£±¸¿¡°Ô¸¸ °ø°³, A : ÀüÃ¼ °ø°³, M : ³ª¸¸ º¸±â
-	 * ±âº»°ªÀº A.
+	 * í¬ìŠ¤íŒ… í•  ìŠ¤í† ë¦¬ë¥¼ ì „ì²´ ê³µê°œí• ì§€ ì¹œêµ¬ ê³µê°œí• ì§€ ì—¬ë¶€.
+	 * F : ì¹œêµ¬ì—ê²Œë§Œ ê³µê°œ, A : ì „ì²´ ê³µê°œ, M : ë‚˜ë§Œ ë³´ê¸°
+	 * ê¸°ë³¸ê°’ì€ A.
 	 * 
-	 * ÀüÃ¼ °ø°³·Î ¼³Á¤ ÇÒ °æ¿ì ÀÚµ¿À¸·Î °øÀ¯ °¡´É¿©ºÎ°¡ true·Î º¯°æµÊ.
-	 * ÀüÃ¼ °ø°³ ¼³Á¤ ÈÄ ´Ù¸¥ ¼³Á¤À¸·Î º¯°æ ½Ã °øÀ¯ °¡´É¿¡ ´ëÇÑ ¼³Á¤ È®ÀÎ ÇÊ¿ä.
+	 * ì „ì²´ ê³µê°œë¡œ ì„¤ì • í•  ê²½ìš° ìë™ìœ¼ë¡œ ê³µìœ  ê°€ëŠ¥ì—¬ë¶€ê°€ trueë¡œ ë³€ê²½ë¨.
+	 * ì „ì²´ ê³µê°œ ì„¤ì • í›„ ë‹¤ë¥¸ ì„¤ì •ìœ¼ë¡œ ë³€ê²½ ì‹œ ê³µìœ  ê°€ëŠ¥ì— ëŒ€í•œ ì„¤ì • í™•ì¸ í•„ìš”.
 	 * </pre>
 	 * @return
 	 */
@@ -37,7 +37,7 @@ public class AbstractStoryPosting extends KakaoObject {
 	
 	/**
 	 * <pre>
-	 * Ä£±¸ °ø°³½Ã¿¡ Ä£±¸°¡ ÇØ´çÆ÷½ºÆÃÀ» °øÀ¯ÇÒ ¼ö ÀÖ´ÂÁö ¿©ºÎ.
+	 * ì¹œêµ¬ ê³µê°œì‹œì— ì¹œêµ¬ê°€ í•´ë‹¹í¬ìŠ¤íŒ…ì„ ê³µìœ í•  ìˆ˜ ìˆëŠ”ì§€ ì—¬ë¶€.
 	 * </pre>
 	 * @return true or false
 	 */
@@ -46,11 +46,11 @@ public class AbstractStoryPosting extends KakaoObject {
 	}
 	/**
 	 * <pre>
-	 * Ä£±¸ °ø°³½Ã¿¡ Ä£±¸°¡ ÇØ´çÆ÷½ºÆÃÀ» °øÀ¯ÇÒ ¼ö ÀÖ´ÂÁö ¿©ºÎ. 
-	 * ÀüÃ¼ °ø°³ÀÎ °æ¿ì´Â °øÀ¯¿©ºÎ ¼±ÅÃºÒ°¡. ¹«Á¶°Ç °øÀ¯°¡´É. 
-	 * ±âº»°ªÀº false.
+	 * ì¹œêµ¬ ê³µê°œì‹œì— ì¹œêµ¬ê°€ í•´ë‹¹í¬ìŠ¤íŒ…ì„ ê³µìœ í•  ìˆ˜ ìˆëŠ”ì§€ ì—¬ë¶€. 
+	 * ì „ì²´ ê³µê°œì¸ ê²½ìš°ëŠ” ê³µìœ ì—¬ë¶€ ì„ íƒë¶ˆê°€. ë¬´ì¡°ê±´ ê³µìœ ê°€ëŠ¥. 
+	 * ê¸°ë³¸ê°’ì€ false.
 	 * 
-	 * Çö °øÀ¯ »óÅÂ Á¤º¸°¡ A(ÀüÃ¼ °ø°³)·Î ¼³Á¤µÇ¾îÀÖ´Ù¸é ¹«Á¶°Ç true ¼³Á¤
+	 * í˜„ ê³µìœ  ìƒíƒœ ì •ë³´ê°€ A(ì „ì²´ ê³µê°œ)ë¡œ ì„¤ì •ë˜ì–´ìˆë‹¤ë©´ ë¬´ì¡°ê±´ true ì„¤ì •
 	 * </pre>
 	 * @param enableShare
 	 */
@@ -68,7 +68,7 @@ public class AbstractStoryPosting extends KakaoObject {
 	
 	/**
 	 * <pre>
-	 * Android ¾Û ½ÇÇà URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ.
+	 * Android ì•± ì‹¤í–‰ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°.
 	 * </pre>
 	 * @return
 	 */
@@ -77,10 +77,10 @@ public class AbstractStoryPosting extends KakaoObject {
 	}
 	/**
 	 * <pre>
-	 * Android ¾Û ½ÇÇà URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ.
-	 * ±âº» URL "kakao[appkey]://kakaostory" µÚ¿¡ ÆÄ¶ó¹ÌÅÍ·Î ºÙ°Ô µÈ´Ù.
+	 * Android ì•± ì‹¤í–‰ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°.
+	 * ê¸°ë³¸ URL "kakao[appkey]://kakaostory" ë’¤ì— íŒŒë¼ë¯¸í„°ë¡œ ë¶™ê²Œ ëœë‹¤.
 	 * 
-	 * ±âº»°ªÀº emtpty stringÀ¸·Î null ¶Ç´Â empty ÀÏ°æ¿ì ÇØ´ç Á¤º¸´Â api ¿äÃ» ÆÄ¶ó¸ŞÅÍ¿¡ Æ÷ÇÔµÇÁö ¾ÊÀ½.
+	 * ê¸°ë³¸ê°’ì€ emtpty stringìœ¼ë¡œ null ë˜ëŠ” empty ì¼ê²½ìš° í•´ë‹¹ ì •ë³´ëŠ” api ìš”ì²­ íŒŒë¼ë©”í„°ì— í¬í•¨ë˜ì§€ ì•ŠìŒ.
 	 * </pre>
 	 * @return
 	 */
@@ -90,7 +90,7 @@ public class AbstractStoryPosting extends KakaoObject {
 	
 	/**
 	 * <pre>
-	 * iOS ¾Û ½ÇÇà URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ. 
+	 * iOS ì•± ì‹¤í–‰ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°. 
 	 * </pre>
 	 * @param iosExecParam
 	 */
@@ -99,10 +99,10 @@ public class AbstractStoryPosting extends KakaoObject {
 	}
 	/**
 	 * <pre>
-	 * iOS ¾Û ½ÇÇà URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ. 
-	 * ±âº» URL "kakao[appkey]://kakaostory" µÚ¿¡ ÆÄ¶ó¹ÌÅÍ·Î ºÙ°Ô µÈ´Ù.
+	 * iOS ì•± ì‹¤í–‰ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°. 
+	 * ê¸°ë³¸ URL "kakao[appkey]://kakaostory" ë’¤ì— íŒŒë¼ë¯¸í„°ë¡œ ë¶™ê²Œ ëœë‹¤.
 	 * 
-	 * ±âº»°ªÀº emtpty stringÀ¸·Î null ¶Ç´Â empty ÀÏ°æ¿ì ÇØ´ç Á¤º¸´Â api ¿äÃ» ÆÄ¶ó¸ŞÅÍ¿¡ Æ÷ÇÔµÇÁö ¾ÊÀ½.
+	 * ê¸°ë³¸ê°’ì€ emtpty stringìœ¼ë¡œ null ë˜ëŠ” empty ì¼ê²½ìš° í•´ë‹¹ ì •ë³´ëŠ” api ìš”ì²­ íŒŒë¼ë©”í„°ì— í¬í•¨ë˜ì§€ ì•ŠìŒ.
 	 * </pre>
 	 * @param iosExecParam
 	 */
@@ -112,7 +112,7 @@ public class AbstractStoryPosting extends KakaoObject {
 	
 	/**
 	 * <pre>
-	 * Android ¾Û ¸¶ÄÏ URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ.
+	 * Android ì•± ë§ˆì¼“ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°.
 	 * </pre>
 	 * @return
 	 */
@@ -121,10 +121,10 @@ public class AbstractStoryPosting extends KakaoObject {
 	}
 	/**
 	 * <pre>
-	 * Android ¾Û ¸¶ÄÏ URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ.
-	 * ±âº» URL "market://details?id=[android package name]" µÚ¿¡ ÆÄ¶ó¹ÌÅÍ·Î ºÙ°Ô µÈ´Ù.
+	 * Android ì•± ë§ˆì¼“ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°.
+	 * ê¸°ë³¸ URL "market://details?id=[android package name]" ë’¤ì— íŒŒë¼ë¯¸í„°ë¡œ ë¶™ê²Œ ëœë‹¤.
 	 * 
-	 * ±âº»°ªÀº emtpty stringÀ¸·Î null ¶Ç´Â empty ÀÏ°æ¿ì ÇØ´ç Á¤º¸´Â api ¿äÃ» ÆÄ¶ó¸ŞÅÍ¿¡ Æ÷ÇÔµÇÁö ¾ÊÀ½.
+	 * ê¸°ë³¸ê°’ì€ emtpty stringìœ¼ë¡œ null ë˜ëŠ” empty ì¼ê²½ìš° í•´ë‹¹ ì •ë³´ëŠ” api ìš”ì²­ íŒŒë¼ë©”í„°ì— í¬í•¨ë˜ì§€ ì•ŠìŒ.
 	 * </pre>
 	 * @return
 	 */
@@ -134,7 +134,7 @@ public class AbstractStoryPosting extends KakaoObject {
 	
 	/**
 	 * <pre>
-	 * iOS ¾Û ¸¶ÄÏ URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ.
+	 * iOS ì•± ë§ˆì¼“ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°.
 	 * </pre>
 	 * @return
 	 */
@@ -143,10 +143,10 @@ public class AbstractStoryPosting extends KakaoObject {
 	}
 	/**
 	 * <pre>
-	 * iOS ¾Û ¸¶ÄÏ URL¿¡ °°ÀÌ ºÙ¿©ÁÙ ÆÄ¶ó¹ÌÅÍ.
-	 * ±âº» URL "https://itunes.apple.com/app/id[¾Û½ºÅä¾î ID]" µÚ¿¡ ÆÄ¶ó¹ÌÅÍ·Î ºÙ°Ô µÈ´Ù.
+	 * iOS ì•± ë§ˆì¼“ URLì— ê°™ì´ ë¶™ì—¬ì¤„ íŒŒë¼ë¯¸í„°.
+	 * ê¸°ë³¸ URL "https://itunes.apple.com/app/id[ì•±ìŠ¤í† ì–´ ID]" ë’¤ì— íŒŒë¼ë¯¸í„°ë¡œ ë¶™ê²Œ ëœë‹¤.
 	 * 
-	 * ±âº»°ªÀº emtpty stringÀ¸·Î null ¶Ç´Â empty ÀÏ°æ¿ì ÇØ´ç Á¤º¸´Â api ¿äÃ» ÆÄ¶ó¸ŞÅÍ¿¡ Æ÷ÇÔµÇÁö ¾ÊÀ½.
+	 * ê¸°ë³¸ê°’ì€ emtpty stringìœ¼ë¡œ null ë˜ëŠ” empty ì¼ê²½ìš° í•´ë‹¹ ì •ë³´ëŠ” api ìš”ì²­ íŒŒë¼ë©”í„°ì— í¬í•¨ë˜ì§€ ì•ŠìŒ.
 	 * </pre>
 	 * @return
 	 */

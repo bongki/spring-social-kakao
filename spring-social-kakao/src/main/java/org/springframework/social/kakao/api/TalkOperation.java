@@ -3,7 +3,7 @@ package org.springframework.social.kakao.api;
 public interface TalkOperation {
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Ş¹ŞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿ÀÅå ÇÁ·ÎÇÊÀ» Á¶È¸ÇÕ´Ï´Ù.
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìì˜ ì¹´ì¹´ì˜¤í†¡ í”„ë¡œí•„ì„ ì¡°íšŒí•©ë‹ˆë‹¤.
 	 * </pre>
 	 * @return
 	 */

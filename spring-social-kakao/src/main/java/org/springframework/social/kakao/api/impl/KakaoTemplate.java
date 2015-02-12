@@ -82,7 +82,7 @@ public class KakaoTemplate extends AbstractOAuth2ApiBinding implements Kakao {
 	}
 
 	/**
-	 * admin key »ç¿ëÇÏ´Â apiÈ£Ãâ ½Ã »ç¿ëÇÒ rest template ¿¡ ¼³Á¤ÇÒ interceptor
+	 * admin key ì‚¬ìš©í•˜ëŠ” apií˜¸ì¶œ ì‹œ ì‚¬ìš©í•  rest template ì— ì„¤ì •í•  interceptor
 	 */
 	class AdminKeyHeaderOAuth2RequestInterceptor implements ClientHttpRequestInterceptor {
 		private final String adminKey;

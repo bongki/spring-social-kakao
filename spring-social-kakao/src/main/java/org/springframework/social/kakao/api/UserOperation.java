@@ -3,7 +3,7 @@ package org.springframework.social.kakao.api;
 public interface UserOperation {
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ °íÀ¯ id°ªÀ» °¡Á®¿É´Ï´Ù.
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ê³ ìœ  idê°’ì„ ê°€ì ¸ì˜µë‹ˆë‹¤.
 	 * </pre>
 	 * @return
 	 */
@@ -11,7 +11,7 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ ´Ð³×ÀÓ Á¤º¸¸¦ °¡Á®¿É´Ï´Ù.
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ë‹‰ë„¤ìž„ ì •ë³´ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
 	 * </pre>
 	 * @return
 	 */
@@ -19,7 +19,7 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ ÇÁ·ÎÇÊ Á¤º¸¸¦ Á¶È¸ÇÕ´Ï´Ù.
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ í”„ë¡œí•„ ì •ë³´ë¥¼ ì¡°íšŒí•©ë‹ˆë‹¤.
 	 * </pre>
 	 * @return
 	 */
@@ -27,8 +27,8 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ ¾Û ¿¬°áÀ» ÇØÁ¦ ÇÕ´Ï´Ù.
-	 * - ¾Û°úÀÇ ¿¬µ¿ÀÌ¿ÏÀüÈ÷ ²÷±â¸ç ÇØ´ç »ç¿ëÀÚ Á¤º¸´Â Á¦°Å µÇ¾î º¹±¸ ºÒ°¡´ÉÇÕ´Ï´Ù.
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì•± ì—°ê²°ì„ í•´ì œ í•©ë‹ˆë‹¤.
+	 * - ì•±ê³¼ì˜ ì—°ë™ì´ì™„ì „ížˆ ëŠê¸°ë©° í•´ë‹¹ ì‚¬ìš©ìž ì •ë³´ëŠ” ì œê±° ë˜ì–´ ë³µêµ¬ ë¶ˆê°€ëŠ¥í•©ë‹ˆë‹¤.
 	 * </pre> 
 	 * @return
 	 */
@@ -36,8 +36,8 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀÇ »óÅÂ¸¦ È®ÀÎÇÑ´Ù.
-	 *  - ºñÁ¤»óÀû ÅäÅ«ÀÇ °æ¿ì 401 error ¹ß»ý (org.springframework.web.client.HttpClientErrorException)
+	 * í•´ë‹¹ access tokenì˜ ìƒíƒœë¥¼ í™•ì¸í•œë‹¤.
+	 *  - ë¹„ì •ìƒì  í† í°ì˜ ê²½ìš° 401 error ë°œìƒ (org.springframework.web.client.HttpClientErrorException)
 	 * </pre>
 	 * @return
 	 */
@@ -45,19 +45,19 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ ÇÁ·ÎÇÊ Á¤º¸¸¦ ¼öÁ¤ÇÕ´Ï´Ù.
-	 *  - °ü¸®ÀÚ ÆäÀÌÁö¿¡¼­ È®ÀÎ°¡´ÉÇÑ default fieldÀÌ¿Ü¿¡ °³¹ßÀÚ°¡ Ãß°¡ÇÑ custom fieldÀÇ µ¥ÀÌÅÍ¿¡ ´ëÇÑ µ¥ÀÌÅÍ¸¦ ¼ÂÆÃÇÏ´Âµ¥ »ç¿ëÇÕ´Ï´Ù.
-	 *  - ¹ÝÈ¯ µ¥ÀÌÅÍ¿¡´Â ¾÷µ¥ÀÌÆ®µÈ »ç¿ëÀÚÀÇ id ¸¸ Á¸ÀçÇÕ´Ï´Ù. 
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ í”„ë¡œí•„ ì •ë³´ë¥¼ ìˆ˜ì •í•©ë‹ˆë‹¤.
+	 *  - ê´€ë¦¬ìž íŽ˜ì´ì§€ì—ì„œ í™•ì¸ê°€ëŠ¥í•œ default fieldì´ì™¸ì— ê°œë°œìžê°€ ì¶”ê°€í•œ custom fieldì˜ ë°ì´í„°ì— ëŒ€í•œ ë°ì´í„°ë¥¼ ì…‹íŒ…í•˜ëŠ”ë° ì‚¬ìš©í•©ë‹ˆë‹¤.
+	 *  - ë°˜í™˜ ë°ì´í„°ì—ëŠ” ì—…ë°ì´íŠ¸ëœ ì‚¬ìš©ìžì˜ id ë§Œ ì¡´ìž¬í•©ë‹ˆë‹¤. 
 	 * </pre>
-	 * @param profileJsonString º¯°æÇÏ°íÀÚ ÇÏ´Â °èÁ¤ÀÇ Á¤º¸·Î jsonÇüÅÂÀÇ key:value 
+	 * @param profileJsonString ë³€ê²½í•˜ê³ ìž í•˜ëŠ” ê³„ì •ì˜ ì •ë³´ë¡œ jsoní˜•íƒœì˜ key:value 
 	 * @return
 	 */
 	KakaoProfile updateProfile(String profileJsonString);
 	
 	/**
 	 * <pre>
-	 * ·Î±×¾Æ¿ô
-	 *  - ¹ÝÈ¯ µ¥ÀÌÅÍ´Â ¾÷µ¥ÀÌÆ®µÈ »ç¿ëÀÚÀÇ id ¸¸ Á¸ÀçÇÕ´Ï´Ù.
+	 * ë¡œê·¸ì•„ì›ƒ
+	 *  - ë°˜í™˜ ë°ì´í„°ëŠ” ì—…ë°ì´íŠ¸ëœ ì‚¬ìš©ìžì˜ id ë§Œ ì¡´ìž¬í•©ë‹ˆë‹¤.
 	 * </pre>
 	 * @return
 	 */
@@ -65,9 +65,9 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * ¾Û ¿¬°á
-	 *  - Ä«Ä«¿À ÇÃ·§Æû ¼­ºñ½º¿¡¼­ ÀÚµ¿ ¾Û ¿¬°á ±â´ÉÀ» Á¦°øÇÏ¹Ç·Î ÇØ´ç ±â´ÉÀ» ÇØÁ¦ ÇÏ°í ¿î¿µÁßÀÎ °æ¿ì¿¡¸¸ »ç¿ëÇÕ´Ï´Ù.
-	 *  - ¾Û ¿¬°á ±â´ÉÀ» È£Ãâ ÇÒ¶§ updateProfile·Î Á¦°øÇÏ´Â »ç¿ëÀÚ Á¤º¸ ÀúÀå ±â´ÉÀÌ µ¿½Ã¿¡ Áö¿øµË´Ï´Ù. (Á¤º¸ÀúÀåÀ» ¿øÄ¡ ¾ÊÀ» °æ¿ì null ¶Ç´Â empty string °ªÀ» ÆÄ¶ó¸ÞÅÍ·Î Àü¼ÛÇÏ¸é µË´Ï´Ù.)
+	 * ì•± ì—°ê²°
+	 *  - ì¹´ì¹´ì˜¤ í”Œëž«í¼ ì„œë¹„ìŠ¤ì—ì„œ ìžë™ ì•± ì—°ê²° ê¸°ëŠ¥ì„ ì œê³µí•˜ë¯€ë¡œ í•´ë‹¹ ê¸°ëŠ¥ì„ í•´ì œ í•˜ê³  ìš´ì˜ì¤‘ì¸ ê²½ìš°ì—ë§Œ ì‚¬ìš©í•©ë‹ˆë‹¤.
+	 *  - ì•± ì—°ê²° ê¸°ëŠ¥ì„ í˜¸ì¶œ í• ë•Œ updateProfileë¡œ ì œê³µí•˜ëŠ” ì‚¬ìš©ìž ì •ë³´ ì €ìž¥ ê¸°ëŠ¥ì´ ë™ì‹œì— ì§€ì›ë©ë‹ˆë‹¤. (ì •ë³´ì €ìž¥ì„ ì›ì¹˜ ì•Šì„ ê²½ìš° null ë˜ëŠ” empty string ê°’ì„ íŒŒë¼ë©”í„°ë¡œ ì „ì†¡í•˜ë©´ ë©ë‹ˆë‹¤.)
 	 * </pre>
 	 * @return
 	 */
@@ -75,12 +75,12 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * »ç¿ëÀÚ ¸ñ·Ï °¡Á®¿À±â
-	 *  - admin key¸¦ ÀÌ¿ëÇÏ¿© ÇØ´ç ¾Û¿¡ ¿¬°áµÇ¾îÀÖ´Â »ç¿ëÀÚ ¸ñ·ÏÀ» Á¶È¸ÇÕ´Ï´Ù.
-	 *    °Ë»ö °ü·Ã ÆÄ¶ó¸ÞÅÍ°¡ ¾øÀÌ Á¶È¸¸¦ ÁøÇàÇÏ´Â°ÍÀ¸·Î (°Ë»ö °ü·Ã ÆÄ¶ó¸ÞÅÍ´Â ÀüºÎ optional)
-	 *    order ¿É¼ÇÀº asc·Î Á¶È¸µÇ´Â ¸ñ·ÏÀÇ ¼ö´Â ±âº»°ªÀÌ 100¸í±îÁö Á¶È¸µË´Ï´Ù.
-	 *    °ü·Ã»çÇ×Àº ¾Æ·¡ÀÇ kakao rest api °³¹ß°¡ÀÌµå ÆäÀÌÁö¸¦ ÂüÁ¶ ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.
-	 *    https://developer.kakao.com/docs/restapi#»ç¿ëÀÚ-°ü¸®-»ç¿ëÀÚ-¸®½ºÆ®-¿äÃ» 
+	 * ì‚¬ìš©ìž ëª©ë¡ ê°€ì ¸ì˜¤ê¸°
+	 *  - admin keyë¥¼ ì´ìš©í•˜ì—¬ í•´ë‹¹ ì•±ì— ì—°ê²°ë˜ì–´ìžˆëŠ” ì‚¬ìš©ìž ëª©ë¡ì„ ì¡°íšŒí•©ë‹ˆë‹¤.
+	 *    ê²€ìƒ‰ ê´€ë ¨ íŒŒë¼ë©”í„°ê°€ ì—†ì´ ì¡°íšŒë¥¼ ì§„í–‰í•˜ëŠ”ê²ƒìœ¼ë¡œ (ê²€ìƒ‰ ê´€ë ¨ íŒŒë¼ë©”í„°ëŠ” ì „ë¶€ optional)
+	 *    order ì˜µì…˜ì€ ascë¡œ ì¡°íšŒë˜ëŠ” ëª©ë¡ì˜ ìˆ˜ëŠ” ê¸°ë³¸ê°’ì´ 100ëª…ê¹Œì§€ ì¡°íšŒë©ë‹ˆë‹¤.
+	 *    ê´€ë ¨ì‚¬í•­ì€ ì•„ëž˜ì˜ kakao rest api ê°œë°œê°€ì´ë“œ íŽ˜ì´ì§€ë¥¼ ì°¸ì¡° í•˜ì‹œê¸° ë°”ëžë‹ˆë‹¤.
+	 *    https://developer.kakao.com/docs/restapi#ì‚¬ìš©ìž-ê´€ë¦¬-ì‚¬ìš©ìž-ë¦¬ìŠ¤íŠ¸-ìš”ì²­ 
 	 * </pre>
 	 * @return
 	 */
@@ -88,10 +88,10 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * »ç¿ëÀÚ ¸ñ·Ï °¡Á®¿À±â
-	 *  - admin key¸¦ ÀÌ¿ëÇÏ¿© ÇØ´ç ¾Û¿¡ ¿¬°áµÇ¾îÀÖ´Â »ç¿ëÀÚ ¸ñ·ÏÀ» Á¶È¸ÇÕ´Ï´Ù.
-	 *    °Ë»ö °ü·Ã ÆÄ¶ó¸ÞÅÍ¸¦ ¼ÂÆÃÇÏ¿© Á¶È¸ ÇÒ¶§ »ç¿ëÇÏ¸ç °¢ ÆÄ¶ó¸ÞÅÍ Á¤º¸´Â 
-	 *    ids() ¸Þ¼­µåÀÇ ÁÖ¼®¿¡ ³ª¿ÍÀÖ´Â °³¹ß°¡ÀÌµå ÆäÀÌÁö¸¦ ÂüÁ¶ ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.
+	 * ì‚¬ìš©ìž ëª©ë¡ ê°€ì ¸ì˜¤ê¸°
+	 *  - admin keyë¥¼ ì´ìš©í•˜ì—¬ í•´ë‹¹ ì•±ì— ì—°ê²°ë˜ì–´ìžˆëŠ” ì‚¬ìš©ìž ëª©ë¡ì„ ì¡°íšŒí•©ë‹ˆë‹¤.
+	 *    ê²€ìƒ‰ ê´€ë ¨ íŒŒë¼ë©”í„°ë¥¼ ì…‹íŒ…í•˜ì—¬ ì¡°íšŒ í• ë•Œ ì‚¬ìš©í•˜ë©° ê° íŒŒë¼ë©”í„° ì •ë³´ëŠ” 
+	 *    ids() ë©”ì„œë“œì˜ ì£¼ì„ì— ë‚˜ì™€ìžˆëŠ” ê°œë°œê°€ì´ë“œ íŽ˜ì´ì§€ë¥¼ ì°¸ì¡° í•˜ì‹œê¸° ë°”ëžë‹ˆë‹¤.
 	 * </pre>
 	 * @param limit
 	 * @param fromId
@@ -102,8 +102,8 @@ public interface UserOperation {
 	
 	/**
 	 * <pre>
-	 * »ç¿ëÀÚ Á¤º¸ Á¶È¸ÇÏ±â.
-	 * ÇØ´ç ±â´ÉÀº °ü¸®ÀÚÀÇ admin key¿Í Æ¯Á¤ À¯Àú id (kakao ÇÃ·§Æû¿¡¼­ ¹ß±ÞµÇ´Â À¯Àú °íÀ¯¹øÈ£)¸¦ ÀÌ¿ëÇÏ¿© ÇØ´ç »ç¿ëÀÚÀÇ Á¤º¸¸¦ Á¶È¸ÇÑ´Ù.
+	 * ì‚¬ìš©ìž ì •ë³´ ì¡°íšŒí•˜ê¸°.
+	 * í•´ë‹¹ ê¸°ëŠ¥ì€ ê´€ë¦¬ìžì˜ admin keyì™€ íŠ¹ì • ìœ ì € id (kakao í”Œëž«í¼ì—ì„œ ë°œê¸‰ë˜ëŠ” ìœ ì € ê³ ìœ ë²ˆí˜¸)ë¥¼ ì´ìš©í•˜ì—¬ í•´ë‹¹ ì‚¬ìš©ìžì˜ ì •ë³´ë¥¼ ì¡°íšŒí•œë‹¤.
 	 * </pre>
 	 * @param userId
 	 * @return

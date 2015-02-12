@@ -6,7 +6,7 @@ public class StoryLinkPosting extends StoryNotePosting {
 
 	/**
 	 * <pre>
-	 * linkinfo api¸¦ »ç¿ëÇÏ¿© Á¶È¸ÇÑ »çÀÌÆ® Á¤º¸
+	 * linkinfo apië¥¼ ì‚¬ìš©í•˜ì—¬ ì¡°íšŒí•œ ì‚¬ì´íŠ¸ ì •ë³´
 	 * </pre>
 	 * @return
 	 */
@@ -15,9 +15,9 @@ public class StoryLinkPosting extends StoryNotePosting {
 	}
 	/**
 	 * <pre>
-	 * linkinfo api¸¦ »ç¿ëÇÏ¿© Á¶È¸ÇÑ »çÀÌÆ® Á¤º¸
+	 * linkinfo apië¥¼ ì‚¬ìš©í•˜ì—¬ ì¡°íšŒí•œ ì‚¬ì´íŠ¸ ì •ë³´
 	 * 
-	 * ¸¸ÀÏ url°ªÀ» ¼ÂÆÃÇÏ¿© posLink operation À» È£ÃâÇÑ´Ù¸é ÇØ´ç °´Ã¼´Â ¹«½ÃµÊ.
+	 * ë§Œì¼ urlê°’ì„ ì…‹íŒ…í•˜ì—¬ posLink operation ì„ í˜¸ì¶œí•œë‹¤ë©´ í•´ë‹¹ ê°ì²´ëŠ” ë¬´ì‹œë¨.
 	 * </pre>
 	 * @param storyLinkInfo
 	 */
@@ -27,7 +27,7 @@ public class StoryLinkPosting extends StoryNotePosting {
 	
 	/**
 	 * <pre>
-	 * ¸µÅ©ÇÏ°íÀÚ ÇÏ´Â ¿ÜºÎ »çÀÌÆ® url
+	 * ë§í¬í•˜ê³ ì í•˜ëŠ” ì™¸ë¶€ ì‚¬ì´íŠ¸ url
 	 * </pre>
 	 * @return
 	 */
@@ -36,10 +36,10 @@ public class StoryLinkPosting extends StoryNotePosting {
 	}
 	/**
 	 * <pre>
-	 * ¸µÅ©ÇÏ°íÀÚ ÇÏ´Â ¿ÜºÎ »çÀÌÆ® url
+	 * ë§í¬í•˜ê³ ì í•˜ëŠ” ì™¸ë¶€ ì‚¬ì´íŠ¸ url
 	 * 
-	 * ÇØ´ç µ¥ÀÌÅÍ°¡ ¼ÂÆÃ µÇ¾î ÀÖ´Ù¸é linkinfo api¸¦ È£ÃâÇÏ¿© ¹İÈ¯¹ŞÀº °ªÀ» »ç¿ëÇÔ.
-	 * (storyLinkInfo °´Ã¼¿¡ ¼ÂÆÃµÈ Ç×¸ñµé ¹«½ÃµÊ)
+	 * í•´ë‹¹ ë°ì´í„°ê°€ ì…‹íŒ… ë˜ì–´ ìˆë‹¤ë©´ linkinfo apië¥¼ í˜¸ì¶œí•˜ì—¬ ë°˜í™˜ë°›ì€ ê°’ì„ ì‚¬ìš©í•¨.
+	 * (storyLinkInfo ê°ì²´ì— ì…‹íŒ…ëœ í•­ëª©ë“¤ ë¬´ì‹œë¨)
 	 * </pre>
 	 * @param url
 	 */

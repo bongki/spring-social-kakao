@@ -30,6 +30,5 @@ public class KakaoAdapter implements ApiAdapter<Kakao> {
 	@Deprecated
 	public void updateStatus(Kakao kakao, String message) {
 		// do nothing
-		// 카카오 스토리 글남기기 기능으로 추후 추가 예정
 	}
 }

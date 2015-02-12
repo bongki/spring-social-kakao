@@ -38,7 +38,7 @@ public class AbstractKakaoOperations {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 		headers.setAccept(Arrays.asList(new MediaType[]{MediaType.ALL}));
-		headers.set("Authorization", "KakaoAK " + adminKey); //admin key¸¦ header¿¡ ¼ÂÆÃÇØ¾ßÇÔ
+		headers.set("Authorization", "KakaoAK " + adminKey); //admin keyë¥¼ headerì— ì…‹íŒ…í•´ì•¼í•¨
 		
 		return headers;
 	}

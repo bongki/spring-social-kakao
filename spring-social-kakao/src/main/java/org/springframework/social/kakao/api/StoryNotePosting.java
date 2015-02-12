@@ -5,9 +5,9 @@ public class StoryNotePosting extends AbstractStoryPosting {
 
 	/**
 	 * <pre>
-	 * Æ÷½ºÆÃ¿¡ µé¾î°¥ ³»¿ë. 
-	 * ±æÀÌÁ¦ÇÑÀº 2048ÀÚ. 
-	 * »ç¿ëÀÚ°¡ ÀÛ¼ºÇÑ ³»¿ëÀÏ ¼öµµ ÀÖ°í, ¾Û¿¡¼­ ³Ö¾îÁÖ´Â ³»¿ëÀÏ ¼öµµ ÀÖ´Ù.
+	 * í¬ìŠ¤íŒ…ì— ë“¤ì–´ê°ˆ ë‚´ìš©. 
+	 * ê¸¸ì´ì œí•œì€ 2048ìž. 
+	 * ì‚¬ìš©ìžê°€ ìž‘ì„±í•œ ë‚´ìš©ì¼ ìˆ˜ë„ ìžˆê³ , ì•±ì—ì„œ ë„£ì–´ì£¼ëŠ” ë‚´ìš©ì¼ ìˆ˜ë„ ìžˆë‹¤.
 	 * </pre>
 	 * @return
 	 */
@@ -17,13 +17,13 @@ public class StoryNotePosting extends AbstractStoryPosting {
 
 	/**
 	 * <pre>
-	 * Æ÷½ºÆÃ¿¡ µé¾î°¥ ³»¿ë. 
-	 * ±æÀÌÁ¦ÇÑÀº 2048ÀÚ. 
-	 * »ç¿ëÀÚ°¡ ÀÛ¼ºÇÑ ³»¿ëÀÏ ¼öµµ ÀÖ°í, ¾Û¿¡¼­ ³Ö¾îÁÖ´Â ³»¿ëÀÏ ¼öµµ ÀÖ´Ù.
+	 * í¬ìŠ¤íŒ…ì— ë“¤ì–´ê°ˆ ë‚´ìš©. 
+	 * ê¸¸ì´ì œí•œì€ 2048ìž. 
+	 * ì‚¬ìš©ìžê°€ ìž‘ì„±í•œ ë‚´ìš©ì¼ ìˆ˜ë„ ìžˆê³ , ì•±ì—ì„œ ë„£ì–´ì£¼ëŠ” ë‚´ìš©ì¼ ìˆ˜ë„ ìžˆë‹¤.
 	 * 
-	 * 2048ÀÚ¸¦ ³Ñ¾î¼­´Â ³»¿ëÀº ¹ö·ÁÁö°í ³ª¸ÓÁö µ¥ÀÌÅÍ¸¸ Àü¼ÛµÊ.
+	 * 2048ìžë¥¼ ë„˜ì–´ì„œëŠ” ë‚´ìš©ì€ ë²„ë ¤ì§€ê³  ë‚˜ë¨¸ì§€ ë°ì´í„°ë§Œ ì „ì†¡ë¨.
 	 * </pre>
-	 * @return boolean 2048ÀÚ¸¦ ³Ñ´Â °ªÀ» ¼ÂÆÃ ÇÒ °æ¿ì false ¸®ÅÏµÊ.
+	 * @return boolean 2048ìžë¥¼ ë„˜ëŠ” ê°’ì„ ì…‹íŒ… í•  ê²½ìš° false ë¦¬í„´ë¨.
 	 */
 	public boolean setContent(String content) {
 		boolean returnValue = true;

@@ -43,9 +43,9 @@ public class ForApns {
 	
 	/**
 	 * <pre>
-	 * ApnsÀÇ °æ¿ì ÆĞÅ¶ Á¦ÇÑ¿¡ ´ëÇÑ ´ë¾ÈÀ¸·Î ¾Û¿¡ ¹Ì¸® ¸Ş½ÃÁö formatÀ» ÀúÀåÇØµÎ°í ÇØ´ç formatÀÇ Å°¿Í ÆÄ¶ó¸ŞÅÍ¸¸ Àü¼ÛÀÌ °¡´ÉÇÔ.
-	 * ÀÌ·²°æ¿ì message´Â ´Ü¼ø ¹®ÀÚ¿­ÀÌ ¾Æ´Ñ json object·Î Àü¼ÛµÊ
-	 * µû¶ó¼­ ÇØ´ç Ç×¸ñÀº »ç¿ëÀÚ°¡ ¸Ş½ÃÁö¸¦ ¼³Á¤ÇÑ ¹æ½Ä¿¡ µû¶ó String ¶Ç´Â LinkedHashMap<String, Object> °´Ã¼°¡ ¹İÈ¯µÊ
+	 * Apnsì˜ ê²½ìš° íŒ¨í‚· ì œí•œì— ëŒ€í•œ ëŒ€ì•ˆìœ¼ë¡œ ì•±ì— ë¯¸ë¦¬ ë©”ì‹œì§€ formatì„ ì €ì¥í•´ë‘ê³  í•´ë‹¹ formatì˜ í‚¤ì™€ íŒŒë¼ë©”í„°ë§Œ ì „ì†¡ì´ ê°€ëŠ¥í•¨.
+	 * ì´ëŸ´ê²½ìš° messageëŠ” ë‹¨ìˆœ ë¬¸ìì—´ì´ ì•„ë‹Œ json objectë¡œ ì „ì†¡ë¨
+	 * ë”°ë¼ì„œ í•´ë‹¹ í•­ëª©ì€ ì‚¬ìš©ìê°€ ë©”ì‹œì§€ë¥¼ ì„¤ì •í•œ ë°©ì‹ì— ë”°ë¼ String ë˜ëŠ” LinkedHashMap<String, Object> ê°ì²´ê°€ ë°˜í™˜ë¨
 	 * </pre>
 	 * @return
 	 */
@@ -54,8 +54,8 @@ public class ForApns {
 	}
 	/**
 	 * <pre>
-	 * ´Ü¼ø ¹®ÀÚ¿­ ¸Ş½ÃÁö¸¦ ¼ÂÆÃÇÑ´Ù.
-	 * ÀÌ °æ¿ì getMessage ÀÀ´ä object´Â String À¸·Î castingÀÌ °¡´ÉÇÕ´Ï´Ù.
+	 * ë‹¨ìˆœ ë¬¸ìì—´ ë©”ì‹œì§€ë¥¼ ì…‹íŒ…í•œë‹¤.
+	 * ì´ ê²½ìš° getMessage ì‘ë‹µ objectëŠ” String ìœ¼ë¡œ castingì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.
 	 * </pre>
 	 * @param message
 	 */
@@ -65,10 +65,10 @@ public class ForApns {
 	}
 	/**
 	 * <pre>
-	 * Æ÷¸äÆÃµÈ ¹®ÀÚ¿­ ´ëÀÀÀ» À§ÇÑ ¸Ş½ÃÁö¸¦ »ı¼ºÇÕ´Ï´Ù.
-	 * ÀÌ °æ¿ì getMessage ÀÀ´ä object´Â LinkedHashMap<String, Object>·Î castingÀÌ °¡´ÉÇÕ´Ï´Ù.
+	 * í¬ë©§íŒ…ëœ ë¬¸ìì—´ ëŒ€ì‘ì„ ìœ„í•œ ë©”ì‹œì§€ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
+	 * ì´ ê²½ìš° getMessage ì‘ë‹µ objectëŠ” LinkedHashMap<String, Object>ë¡œ castingì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.
 	 * 
-	 * ÂüÁ¶ : https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html
+	 * ì°¸ì¡° : https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html
 	 * </pre>
 	 * @param locKey
 	 * @param locArgs

@@ -6,7 +6,7 @@ import java.util.List;
 public interface StoryOperation {
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿À ½ºÅä¸® »ç¿ë ¿©ºÎ È®ÀÎ
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì¹´ì¹´ì˜¤ ìŠ¤í† ë¦¬ ì‚¬ìš© ì—¬ë¶€ í™•ì¸
 	 * </pre>
 	 * @return
 	 */
@@ -14,7 +14,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿À ½ºÅä¸® ÇÁ·ÎÇÊ Á¤º¸ Á¶È¸
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì¹´ì¹´ì˜¤ ìŠ¤í† ë¦¬ í”„ë¡œí•„ ì •ë³´ ì¡°íšŒ
 	 * </pre>
 	 * @return
 	 */
@@ -22,7 +22,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿À ½ºÅä¸® ±Û ÀÛ¼º
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì¹´ì¹´ì˜¤ ìŠ¤í† ë¦¬ ê¸€ ìž‘ì„±
 	 * </pre>
 	 * @param storyNotePosting
 	 * @return
@@ -31,7 +31,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿À ÀÌ¹ÌÁö ¾÷·Îµå (for postPhoto)
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì¹´ì¹´ì˜¤ ì´ë¯¸ì§€ ì—…ë¡œë“œ (for postPhoto)
 	 * </pre>
 	 * @param storyPhotoUpload
 	 * @return
@@ -40,7 +40,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿À ½ºÅä¸® Æ÷Åä Æ÷ÇÔ ±Û ÀÛ¼º
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì¹´ì¹´ì˜¤ ìŠ¤í† ë¦¬ í¬í†  í¬í•¨ ê¸€ ìž‘ì„±
 	 * </pre>
 	 * @param storyPhotoPosting
 	 * @return
@@ -49,7 +49,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ¿ÜºÎ ¸µÅ© Á¤º¸ °¡Á®¿À±â (link Æ÷½ºÆÃ Á¤º¸¿¡ È°¿ë)
+	 * ì™¸ë¶€ ë§í¬ ì •ë³´ ê°€ì ¸ì˜¤ê¸° (link í¬ìŠ¤íŒ… ì •ë³´ì— í™œìš©)
 	 * </pre>
 	 * @param uri
 	 * @return
@@ -58,7 +58,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ÇØ´ç access tokenÀ» ¹ß±Þ¹ÞÀº »ç¿ëÀÚÀÇ Ä«Ä«¿À ½ºÅä¸® ¿ÜºÎ ÆäÀÌÁö ¸µÅ© Æ÷ÇÔ ±Û ÀÛ¼º
+	 * í•´ë‹¹ access tokenì„ ë°œê¸‰ë°›ì€ ì‚¬ìš©ìžì˜ ì¹´ì¹´ì˜¤ ìŠ¤í† ë¦¬ ì™¸ë¶€ íŽ˜ì´ì§€ ë§í¬ í¬í•¨ ê¸€ ìž‘ì„±
 	 * </pre>
 	 * @param storyLinkData
 	 * @return
@@ -67,7 +67,7 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * ÇÑ°³ÀÇ ³» ½ºÅä¸® Á¤º¸ °¡Á®¿À±â
+	 * í•œê°œì˜ ë‚´ ìŠ¤í† ë¦¬ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	 * </pre>
 	 * @param id
 	 * @return
@@ -76,19 +76,19 @@ public interface StoryOperation {
 	
 	/**
 	 * <pre>
-	 * º¹¼ö°³ÀÇ ³» ½ºÅä¸® Á¤º¸ °¡Á®¿À±â
+	 * ë³µìˆ˜ê°œì˜ ë‚´ ìŠ¤í† ë¦¬ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	 * 
-	 * °¡Àå ÃÖ±Ù¿¡ ÀÛ¼ºµÈ ³»½ºÅä¸® º¹¼ö°³¸¦ ¿äÃ»ÇÏ°Å³ª ÁöÁ¤ÇÑ ½ºÅä¸®º¸´Ù ÀÌÀü¿¡ ÀÛ¼ºµÈ ³»½ºÅä¸® º¹¼ö°³¸¦ ¿äÃ»ÇÒ ¼ö ÀÖ½À´Ï´Ù. 
-	 * ´ë·« 18°³ Á¤µµÀÇ Á¤º¸¸¦ ÇÑ²¨¹ø¿¡ ¹ÞÀ» ¼ö ÀÖ½À´Ï´Ù. ÁöÁ¤ÇÑ ¾ÆÀÌµðÀÇ ³»½ºÅä¸®´Â °á°ú¿¡ Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù. (°³¹ß°¡ÀÌµå ¹ßÃé)
+	 * ê°€ìž¥ ìµœê·¼ì— ìž‘ì„±ëœ ë‚´ìŠ¤í† ë¦¬ ë³µìˆ˜ê°œë¥¼ ìš”ì²­í•˜ê±°ë‚˜ ì§€ì •í•œ ìŠ¤í† ë¦¬ë³´ë‹¤ ì´ì „ì— ìž‘ì„±ëœ ë‚´ìŠ¤í† ë¦¬ ë³µìˆ˜ê°œë¥¼ ìš”ì²­í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. 
+	 * ëŒ€ëžµ 18ê°œ ì •ë„ì˜ ì •ë³´ë¥¼ í•œêº¼ë²ˆì— ë°›ì„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì§€ì •í•œ ì•„ì´ë””ì˜ ë‚´ìŠ¤í† ë¦¬ëŠ” ê²°ê³¼ì— í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. (ê°œë°œê°€ì´ë“œ ë°œì·Œ)
 	 * </pre>
-	 * @param lastId null°ª Àü¼Û ½Ã °¡Àå ÃÖ±ÙÀÇ °ÍºÎÅÍ Á¶È¸
+	 * @param lastId nullê°’ ì „ì†¡ ì‹œ ê°€ìž¥ ìµœê·¼ì˜ ê²ƒë¶€í„° ì¡°íšŒ
 	 * @return
 	 */
 	List<MyStory> myStories(String lastId);
 	
 	/**
 	 * <pre>
-	 * ³» ½ºÅä¸® ±Û »èÁ¦
+	 * ë‚´ ìŠ¤í† ë¦¬ ê¸€ ì‚­ì œ
 	 * </pre>
 	 * @param id
 	 */

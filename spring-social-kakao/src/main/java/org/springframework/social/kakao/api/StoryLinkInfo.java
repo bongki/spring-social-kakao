@@ -18,7 +18,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	
 	/**
 	 * <pre>
-	 * ½ºÅ©·¦ ÇÑ ÁÖ¼ÒÀÇ URL. shorten URLÀÇ °æ¿ì resolutionÇÑ ½ÇÁ¦ URL
+	 * ìŠ¤í¬ë© í•œ ì£¼ì†Œì˜ URL. shorten URLì˜ ê²½ìš° resolutioní•œ ì‹¤ì œ URL
 	 * </pre>
 	 * @return
 	 */
@@ -27,7 +27,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * ¿äÃ»½ÃÀÇ URL ¿øº». resolutionÀ» ÇÏ±â ÀüÀÇ URL
+	 * ìš”ì²­ì‹œì˜ URL ì›ë³¸. resolutionì„ í•˜ê¸° ì „ì˜ URL
 	 * </pre>
 	 * @return
 	 */
@@ -36,7 +36,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * ¿äÃ»ÇÑ ÁÖ¼ÒÀÇ Host ¸í
+	 * ìš”ì²­í•œ ì£¼ì†Œì˜ Host ëª…
 	 * </pre>
 	 * @return
 	 */
@@ -45,7 +45,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * À¥ÆäÀÌÁö Å¸ÀÌÆ²
+	 * ì›¹í˜ì´ì§€ íƒ€ì´í‹€
 	 * </pre>
 	 * @return
 	 */
@@ -54,7 +54,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * ÇØ´ç À¥ ÆäÀÌÁöÀÇ ´ëÇ¥ ÀÌ¹ÌÁö ÁÖ¼Ò. ÃÖ´ë 3°³.
+	 * í•´ë‹¹ ì›¹ í˜ì´ì§€ì˜ ëŒ€í‘œ ì´ë¯¸ì§€ ì£¼ì†Œ. ìµœëŒ€ 3ê°œ.
 	 * </pre>
 	 * @return
 	 */
@@ -63,7 +63,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * ÇØ´ç À¥ ÆäÀÌÁöÀÇ ¼³¸í
+	 * í•´ë‹¹ ì›¹ í˜ì´ì§€ì˜ ì„¤ëª…
 	 * </pre>
 	 * @return
 	 */
@@ -72,7 +72,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * ÇØ´ç À¥ ÆäÀÌÁöÀÇ ¼½¼Ç Á¤º¸
+	 * í•´ë‹¹ ì›¹ í˜ì´ì§€ì˜ ì„¹ì…˜ ì •ë³´
 	 * </pre>
 	 * @return
 	 */
@@ -81,7 +81,7 @@ public class StoryLinkInfo extends KakaoObject implements Serializable {
 	}
 	/**
 	 * <pre>
-	 * ÇØ´ç À¥ »çÀÌÆ® ÀÌ¸§
+	 * í•´ë‹¹ ì›¹ ì‚¬ì´íŠ¸ ì´ë¦„
 	 * </pre>
 	 * @return
 	 */

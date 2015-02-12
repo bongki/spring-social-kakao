@@ -9,7 +9,7 @@ public class StoryPostingResult extends KakaoObject implements Serializable {
 
 	/**
 	 * <pre>
-	 * Æ÷½ºÆÃ µÈ ±ÛÀÇ id
+	 * í¬ìŠ¤íŒ… ëœ ê¸€ì˜ id
 	 * </pre>
 	 * @return
 	 */

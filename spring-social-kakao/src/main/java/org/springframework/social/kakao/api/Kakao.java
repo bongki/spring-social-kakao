@@ -5,7 +5,7 @@ import org.springframework.social.ApiBinding;
 public interface Kakao extends ApiBinding {
 	/**
 	 * <pre>
-	 * »ç¿ëÀÚ °ü¸® API È£Ãâ
+	 * ì‚¬ìš©ì ê´€ë¦¬ API í˜¸ì¶œ
 	 * </pre>
 	 * @return
 	 */
@@ -13,7 +13,7 @@ public interface Kakao extends ApiBinding {
 	
 	/**
 	 * <pre>
-	 * Ä«Ä«¿À ½ºÅä¸® API È£Ãâ
+	 * ì¹´ì¹´ì˜¤ ìŠ¤í† ë¦¬ API í˜¸ì¶œ
 	 * </pre>
 	 * @return
 	 */
@@ -21,7 +21,7 @@ public interface Kakao extends ApiBinding {
 	
 	/**
 	 * <pre>
-	 * Ä«Ä«¿À Åå API È£Ãâ
+	 * ì¹´ì¹´ì˜¤ í†¡ API í˜¸ì¶œ
 	 * </pre>
 	 * @return
 	 */
@@ -29,7 +29,7 @@ public interface Kakao extends ApiBinding {
 	
 	/**
 	 * <pre>
-	 * Çª½Ã ¾Ë¸² API È£Ãâ
+	 * í‘¸ì‹œ ì•Œë¦¼ API í˜¸ì¶œ
 	 * </pre>
 	 * @return
 	 */

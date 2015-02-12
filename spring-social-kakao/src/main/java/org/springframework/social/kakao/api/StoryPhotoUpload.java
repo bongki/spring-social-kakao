@@ -8,8 +8,8 @@ public class StoryPhotoUpload {
 
 	/**
 	 * <pre>
-	 * ÆÄÀÏ °æ·Î ¸ñ·ÏÀ» °¡Á®¿Â´Ù.
-	 * ¸ñ·Ï¿¡ µ¥ÀÌÅÍ°¡ ¾ø´Ù¸é nullÀ» ¹ÝÈ¯ÇÑ´Ù.
+	 * íŒŒì¼ ê²½ë¡œ ëª©ë¡ì„ ê°€ì ¸ì˜¨ë‹¤.
+	 * ëª©ë¡ì— ë°ì´í„°ê°€ ì—†ë‹¤ë©´ nullì„ ë°˜í™˜í•œë‹¤.
 	 * </pre>
 	 * @return list or null
 	 */
@@ -22,10 +22,10 @@ public class StoryPhotoUpload {
 
 	/**
 	 * <pre>
-	 * ÆÄÀÏ °æ·Î ¸ñ·Ï ¼³Á¤
+	 * íŒŒì¼ ê²½ë¡œ ëª©ë¡ ì„¤ì •
 	 * 
-	 * ¾÷·Îµå ÀÌ¹ÌÁö Å©±â´Â 5MB ÀÌÇÏ, °¹¼ö´Â 10°³ ÀÌÇÏ·Î Á¦ÇÑµË´Ï´Ù. ´Ü, gif ÆÄÀÏÀº 3MB ÀÌÇÏ, 1°³ ÀÌÇÏ·Î Á¦ÇÑµË´Ï´Ù.
-	 * ¸¸ÀÏ ÆÄÀÏ ¾÷·Îµå ´ë»ó ¼ö°¡ 2°³ ÀÌ»óÀÏ¶§ gif ÆÄÀÏÀÌ Æ÷ÇÔµÇ¾îÀÖ´Ù¸é ÇØ´ç ÆÄÀÏÀ» Á¦¿ÜÇÑ ³ª¸ÓÁö ÆÄÀÏÀº ¾÷·Îµå ´ë»ó¿¡¼­ Á¦¿ÜµË´Ï´Ù.
+	 * ì—…ë¡œë“œ ì´ë¯¸ì§€ í¬ê¸°ëŠ” 5MB ì´í•˜, ê°¯ìˆ˜ëŠ” 10ê°œ ì´í•˜ë¡œ ì œí•œë©ë‹ˆë‹¤. ë‹¨, gif íŒŒì¼ì€ 3MB ì´í•˜, 1ê°œ ì´í•˜ë¡œ ì œí•œë©ë‹ˆë‹¤.
+	 * ë§Œì¼ íŒŒì¼ ì—…ë¡œë“œ ëŒ€ìƒ ìˆ˜ê°€ 2ê°œ ì´ìƒì¼ë•Œ gif íŒŒì¼ì´ í¬í•¨ë˜ì–´ìžˆë‹¤ë©´ í•´ë‹¹ íŒŒì¼ì„ ì œì™¸í•œ ë‚˜ë¨¸ì§€ íŒŒì¼ì€ ì—…ë¡œë“œ ëŒ€ìƒì—ì„œ ì œì™¸ë©ë‹ˆë‹¤.
 	 * </pre>
 	 * @param filePathList
 	 */
@@ -34,11 +34,11 @@ public class StoryPhotoUpload {
 	}
 	/**
 	 * <pre>
-	 * ÆÄÀÏ °æ·Î ¸ñ·Ï list¿¡ µ¥ÀÌÅÍ¸¦ Ãß°¡ÇÑ´Ù.
+	 * íŒŒì¼ ê²½ë¡œ ëª©ë¡ listì— ë°ì´í„°ë¥¼ ì¶”ê°€í•œë‹¤.
 	 * 
-	 * filePathList °´Ã¼¿¡ µ¥ÀÌÅÍ¸¦ add ÇÏ´Â ¹æ½ÄÀ¸·Î µ¿ÀÛÇÑ´Ù.
+	 * filePathList ê°ì²´ì— ë°ì´í„°ë¥¼ add í•˜ëŠ” ë°©ì‹ìœ¼ë¡œ ë™ìž‘í•œë‹¤.
 	 * 
-	 * ¾÷·Îµå ÀÌ¹ÌÁö Å©±â´Â 5MB ÀÌÇÏ, °¹¼ö´Â 10°³ ÀÌÇÏ·Î Á¦ÇÑµË´Ï´Ù. ´Ü, gif ÆÄÀÏÀº 3MB ÀÌÇÏ, 1°³ ÀÌÇÏ·Î Á¦ÇÑµË´Ï´Ù.
+	 * ì—…ë¡œë“œ ì´ë¯¸ì§€ í¬ê¸°ëŠ” 5MB ì´í•˜, ê°¯ìˆ˜ëŠ” 10ê°œ ì´í•˜ë¡œ ì œí•œë©ë‹ˆë‹¤. ë‹¨, gif íŒŒì¼ì€ 3MB ì´í•˜, 1ê°œ ì´í•˜ë¡œ ì œí•œë©ë‹ˆë‹¤.
 	 * </pre>
 	 * @param filePaths
 	 */
@@ -53,7 +53,7 @@ public class StoryPhotoUpload {
 	
 	/**
 	 * <pre>
-	 * ÆÄÀÏ ¸ñ·Ï Á¦°Å (null ¼ÂÆÃ)
+	 * íŒŒì¼ ëª©ë¡ ì œê±° (null ì…‹íŒ…)
 	 * </pre>
 	 */
 	public void clearFilePathList() {
