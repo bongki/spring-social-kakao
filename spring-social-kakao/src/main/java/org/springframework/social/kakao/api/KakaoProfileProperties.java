@@ -21,5 +21,5 @@ public class KakaoProfileProperties extends KakaoObject implements Serializable 
 		return profile_image;
 	}
 
-	KakaoProfileProperties(){}
+	public KakaoProfileProperties(){}
 }
