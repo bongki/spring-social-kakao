@@ -16,6 +16,8 @@ public class KakaoAdapter implements ApiAdapter<Kakao> {
 	
 	public void setConnectionValues(Kakao kakao, ConnectionValues values) {
 		KakaoProfile profile = kakao.userOperation().getUserProfile();
+		KakaoProfileProperties properties = profile.getProperties();
+		if(properties == null) properties = new KakaoProfileProperties();
 		values.setProviderUserId(Long.toString(profile.getId()));
 		values.setDisplayName(profile.getProperties().getNickname());
 		values.setProfileUrl("");
