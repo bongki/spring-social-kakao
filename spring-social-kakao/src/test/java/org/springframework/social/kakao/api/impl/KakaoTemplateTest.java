@@ -128,8 +128,8 @@ public class KakaoTemplateTest {
 		System.out.println("** Story note posting operation");
 		System.out.println("********************************************************");
 		StoryNotePosting storyNotePosting = new StoryNotePosting();
-		StringBuilder sbNoteContent = new StringBuilder("Kakao rest api library °³¹ß Å×½ºÆ®(spring social kakao).\r\n")
-			.append("\r\nÅ×½ºÆ® ½Ã°£ : ").append(DATE_FORMAT.format(new Date()));
+		StringBuilder sbNoteContent = new StringBuilder("Kakao rest api library ê°œë°œ í…ŒìŠ¤íŠ¸(spring social kakao).\r\n")
+				.append("\r\ní…ŒìŠ¤íŠ¸ ì‹œê°„ : ").append(DATE_FORMAT.format(new Date()));
 		storyNotePosting.setContent(sbNoteContent.toString());
 		
 		StoryPostingResult notePostingResult = kakao.storyOperation().postNote(storyNotePosting);
@@ -169,10 +169,10 @@ public class KakaoTemplateTest {
 		StoryLinkPosting storyLinkPosting = new StoryLinkPosting();
 		
 		storyLinkPosting.setStoryLinkInfo(storyLinkInfo);
-		
-		StringBuilder sbLinkContent = new StringBuilder("Kakao rest api library °³¹ß Å×½ºÆ®(spring social kakao).\r\n")
-			.append("kakao linkinfo rest api È£Ãâ °á°ú °´Ã¼ ¼ÂÆÃ Å×½ºÆ®\r\n")
-			.append("\r\nÅ×½ºÆ® ½Ã°£ : ").append(DATE_FORMAT.format(new Date()));
+
+		StringBuilder sbLinkContent = new StringBuilder("Kakao rest api library ê°œë°œ í…ŒìŠ¤íŠ¸(spring social kakao).\r\n")
+				.append("kakao linkinfo rest api í˜¸ì¶œ ê²°ê³¼ ê°ì²´ ì…‹íŒ… í…ŒìŠ¤íŠ¸\r\n")
+				.append("\r\ní…ŒìŠ¤íŠ¸ ì‹œê°„ : ").append(DATE_FORMAT.format(new Date()));
 		storyLinkPosting.setContent(sbLinkContent.toString());
 		
 		StoryPostingResult linkResult = kakao.storyOperation().postLink(storyLinkPosting);
@@ -189,10 +189,10 @@ public class KakaoTemplateTest {
 		StoryLinkPosting storyLinkPostingWithURL = new StoryLinkPosting();
 		
 		storyLinkPostingWithURL.setUrl("https://github.com/bongki/spring-social-kakao");
-		
-		StringBuilder sbLinkWithURLContent = new StringBuilder("Kakao rest api library °³¹ß Å×½ºÆ®(spring social kakao).\r\n")
-			.append("url ¼³Á¤(kakao linkinfo rest api È£Ãâ ³»ºÎ Ã³¸®) Å×½ºÆ®\r\n")
-			.append("\r\nÅ×½ºÆ® ½Ã°£ : ").append(DATE_FORMAT.format(new Date()));
+
+		StringBuilder sbLinkWithURLContent = new StringBuilder("Kakao rest api library ê°œë°œ í…ŒìŠ¤íŠ¸(spring social kakao).\r\n")
+				.append("url ì„¤ì •(kakao linkinfo rest api í˜¸ì¶œ ë‚´ë¶€ ì²˜ë¦¬) í…ŒìŠ¤íŠ¸\r\n")
+				.append("\r\ní…ŒìŠ¤íŠ¸ ì‹œê°„ : ").append(DATE_FORMAT.format(new Date()));
 		storyLinkPostingWithURL.setContent(sbLinkWithURLContent.toString());
 		
 		StoryPostingResult linkWithURLResult = kakao.storyOperation().postLink(storyLinkPostingWithURL);
@@ -216,9 +216,9 @@ public class KakaoTemplateTest {
 		System.out.println("********************************************************");
 		StoryPhotoPosting storyPhotoPosting = new StoryPhotoPosting();
 		storyPhotoPosting.setImageUrlList(imageUrlList);
-		StringBuilder sbPhotoContent = new StringBuilder("Kakao rest api library °³¹ß Å×½ºÆ®(spring social kakao).\r\n")
-			.append("kakao multi rest api È£Ãâ °á°ú °´Ã¼ ¼ÂÆÃ Å×½ºÆ®\r\n")
-			.append("\r\nÅ×½ºÆ® ½Ã°£ : ").append(DATE_FORMAT.format(new Date()));
+		StringBuilder sbPhotoContent = new StringBuilder("Kakao rest api library ê°œë°œ í…ŒìŠ¤íŠ¸(spring social kakao).\r\n")
+				.append("kakao multi rest api í˜¸ì¶œ ê²°ê³¼ ê°ì²´ ì…‹íŒ… í…ŒìŠ¤íŠ¸\r\n")
+				.append("\r\ní…ŒìŠ¤íŠ¸ ì‹œê°„ : ").append(DATE_FORMAT.format(new Date()));
 		storyPhotoPosting.setContent(sbPhotoContent.toString());
 		StoryPostingResult photoResult = kakao.storyOperation().postPhoto(storyPhotoPosting);
 		System.out.println(String.format("** photo article id : %s", photoResult.getId()));
@@ -232,9 +232,9 @@ public class KakaoTemplateTest {
 		System.out.println("********************************************************");
 		StoryPhotoPosting storyPhotoPosting = new StoryPhotoPosting();
 		storyPhotoPosting.setStoryPhotoUpload(storyPhotoUpload);
-		StringBuilder sbPhotoContent = new StringBuilder("Kakao rest api library °³¹ß Å×½ºÆ®(spring social kakao).\r\n")
-			.append("kakao multi rest api ³»ºÎ Ã³¸® Å×½ºÆ®\r\n")
-			.append("\r\nÅ×½ºÆ® ½Ã°£ : ").append(DATE_FORMAT.format(new Date()));
+		StringBuilder sbPhotoContent = new StringBuilder("Kakao rest api library ê°œë°œ í…ŒìŠ¤íŠ¸(spring social kakao).\r\n")
+				.append("kakao multi rest api ë‚´ë¶€ ì²˜ë¦¬ í…ŒìŠ¤íŠ¸\r\n")
+				.append("\r\ní…ŒìŠ¤íŠ¸ ì‹œê°„ : ").append(DATE_FORMAT.format(new Date()));
 		storyPhotoPosting.setContent(sbPhotoContent.toString());
 		StoryPostingResult photoResult = kakao.storyOperation().postPhoto(storyPhotoPosting);
 		System.out.println(String.format("** photo article id : %s", photoResult.getId()));
