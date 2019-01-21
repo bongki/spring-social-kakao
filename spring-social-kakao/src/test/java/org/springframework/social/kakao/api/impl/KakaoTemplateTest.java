@@ -24,7 +24,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class KakaoTemplateTest {
-	static final String ACCESS_TOKEN = "Zs3sB5fiTenU4L-Gj8XlNsTLhJVmW4Nd6AFdFgo8BhkAAAFobpCnWA"; //insert access token
+	static final String ACCESS_TOKEN = "access token"; //insert access token
 	static final String ADMIN_KEY = "admin key"; //insert admin key
 	static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 

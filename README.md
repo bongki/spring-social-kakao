@@ -10,10 +10,10 @@ spring-social-facebook 을 모방하여 만든 kakao api 호출을 위한 librar
 - <s>프로젝트가 MS949 인코딩으로 생성되었음. UTF-8으로의 변경 필요</s> clear
 - [<s>Authorization: KakaoAK {adminKey} 400 에러에 의해 기능 사용불가 버그(admin key를 사용하는 모든 API)</s>](https://github.com/bongki/spring-social-kakao/issues/1) clear
 
-2018.01.21
+2019.01.21
 ------------------------------------------------------
 - ignore 파일 추가
-- KakaoTalk sendToMe 기능 추가 (텍스트 템플릿 보내기)
+- KakaoTalk sendToMe 기능, 테스트 추가 (텍스트 템플릿 보내기)
 - KakaoTemplateTest 인코딩 변경. 변경시 깨지는 한글데이터 복구
 
 2015.02.12
