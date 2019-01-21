@@ -5,7 +5,7 @@ import org.springframework.social.kakao.connect.KakaoConnectionFactory;
 import org.springframework.social.security.provider.OAuth2AuthenticationService;
 
 public class KakaoAuthenticationService extends OAuth2AuthenticationService<Kakao> {
-	public KakaoAuthenticationService(String clientId) {
-		super(new KakaoConnectionFactory(clientId));
+	public KakaoAuthenticationService(String clientId, String clientSecret) {
+		super(new KakaoConnectionFactory(clientId, clientSecret));
 	}
 }
