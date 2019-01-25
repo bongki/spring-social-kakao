@@ -6,6 +6,7 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.kakao.api.Kakao;
 import org.springframework.social.kakao.api.KakaoProfile;
+import org.springframework.social.kakao.api.KakaoProfileProperties;
 
 public class KakaoAdapter implements ApiAdapter<Kakao> {
 	@Deprecated
